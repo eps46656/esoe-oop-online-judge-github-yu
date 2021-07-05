@@ -60,7 +60,7 @@ public class Main {
         ResultGenerator rg =
             new ResultGenerator(args[0], List.of("GreenCrud.java"));
 
-        Random random = new Random();
+        Random random = new Random(System.currentTimeMillis());
 
         GreenCrud gc = new GreenCrud();
         GreenCrudAnswer gc_ans = new GreenCrudAnswer();
