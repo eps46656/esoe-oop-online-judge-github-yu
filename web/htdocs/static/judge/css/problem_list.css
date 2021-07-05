@@ -1,0 +1,16 @@
+.table {
+    width: 100%;
+    margin-bottom: 30px;
+}
+.table .table-column-course {
+    width: 30%;
+    text-align: center;
+}
+.table .table-column-solved {
+    width: 10%;
+    text-align: center;
+}
+.table .table-column-deadline {
+    width: 25%;
+    text-align: center;
+}

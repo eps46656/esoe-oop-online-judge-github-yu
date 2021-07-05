@@ -1,0 +1,702 @@
+[DEBUG] [2021-07-05 23:27:20] (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+[DEBUG] [2021-07-05 23:27:25] (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+[DEBUG] [2021-07-05 23:27:25] (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+[DEBUG] [2021-07-05 23:27:25] (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+[DEBUG] [2021-07-05 23:27:25] (0.000) PRAGMA foreign_keys = OFF; args=None
+[DEBUG] [2021-07-05 23:27:25] (0.000) PRAGMA foreign_keys; args=None
+[DEBUG] [2021-07-05 23:27:25] (0.000) BEGIN; args=None
+[DEBUG] [2021-07-05 23:27:25] CREATE TABLE "django_migrations" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "app" varchar(255) NOT NULL, "name" varchar(255) NOT NULL, "applied" datetime NOT NULL); (params None)
+[DEBUG] [2021-07-05 23:27:25] (0.000) CREATE TABLE "django_migrations" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "app" varchar(255) NOT NULL, "name" varchar(255) NOT NULL, "applied" datetime NOT NULL); args=None
+[DEBUG] [2021-07-05 23:27:25] (0.000) PRAGMA foreign_key_check; args=None
+[DEBUG] [2021-07-05 23:27:25] (0.000) PRAGMA foreign_keys = ON; args=None
+[DEBUG] [2021-07-05 23:27:25] (0.000) PRAGMA foreign_keys = OFF; args=None
+[DEBUG] [2021-07-05 23:27:25] (0.000) PRAGMA foreign_keys; args=None
+[DEBUG] [2021-07-05 23:27:25] (0.000) BEGIN; args=None
+[DEBUG] [2021-07-05 23:27:25] CREATE TABLE "django_content_type" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL); (params None)
+[DEBUG] [2021-07-05 23:27:25] (0.000) CREATE TABLE "django_content_type" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(100) NOT NULL, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL); args=None
+[DEBUG] [2021-07-05 23:27:25] CREATE UNIQUE INDEX "django_content_type_app_label_model_76bd3d3b_uniq" ON "django_content_type" ("app_label", "model"); (params ())
+[DEBUG] [2021-07-05 23:27:25] (0.000) CREATE UNIQUE INDEX "django_content_type_app_label_model_76bd3d3b_uniq" ON "django_content_type" ("app_label", "model"); args=()
+[DEBUG] [2021-07-05 23:27:25] (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+[DEBUG] [2021-07-05 23:27:25] (0.000) INSERT INTO "django_migrations" ("app", "name", "applied") VALUES ('contenttypes', '0001_initial', '2021-07-05 23:27:25.967940'); args=['contenttypes', '0001_initial', '2021-07-05 23:27:25.967940']
+[DEBUG] [2021-07-05 23:27:25] (0.000) PRAGMA foreign_key_check; args=None
+[DEBUG] [2021-07-05 23:27:25] (0.000) PRAGMA foreign_keys = ON; args=None
+[DEBUG] [2021-07-05 23:27:25] (0.000) PRAGMA foreign_keys = OFF; args=None
+[DEBUG] [2021-07-05 23:27:25] (0.000) PRAGMA foreign_keys; args=None
+[DEBUG] [2021-07-05 23:27:25] (0.000) BEGIN; args=None
+[DEBUG] [2021-07-05 23:27:25] CREATE TABLE "auth_permission" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(50) NOT NULL, "content_type_id" integer NOT NULL REFERENCES "django_content_type" ("id") DEFERRABLE INITIALLY DEFERRED, "codename" varchar(100) NOT NULL); (params None)
+[DEBUG] [2021-07-05 23:27:25] (0.000) CREATE TABLE "auth_permission" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(50) NOT NULL, "content_type_id" integer NOT NULL REFERENCES "django_content_type" ("id") DEFERRABLE INITIALLY DEFERRED, "codename" varchar(100) NOT NULL); args=None
+[DEBUG] [2021-07-05 23:27:25] CREATE TABLE "auth_group" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(80) NOT NULL UNIQUE); (params None)
+[DEBUG] [2021-07-05 23:27:25] (0.000) CREATE TABLE "auth_group" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(80) NOT NULL UNIQUE); args=None
+[DEBUG] [2021-07-05 23:27:25] CREATE TABLE "auth_group_permissions" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "group_id" integer NOT NULL REFERENCES "auth_group" ("id") DEFERRABLE INITIALLY DEFERRED, "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id") DEFERRABLE INITIALLY DEFERRED); (params None)
+[DEBUG] [2021-07-05 23:27:25] (0.000) CREATE TABLE "auth_group_permissions" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "group_id" integer NOT NULL REFERENCES "auth_group" ("id") DEFERRABLE INITIALLY DEFERRED, "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id") DEFERRABLE INITIALLY DEFERRED); args=None
+[DEBUG] [2021-07-05 23:27:25] CREATE TABLE "auth_user" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "password" varchar(128) NOT NULL, "last_login" datetime NOT NULL, "is_superuser" bool NOT NULL, "username" varchar(30) NOT NULL UNIQUE, "first_name" varchar(30) NOT NULL, "last_name" varchar(30) NOT NULL, "email" varchar(75) NOT NULL, "is_staff" bool NOT NULL, "is_active" bool NOT NULL, "date_joined" datetime NOT NULL); (params None)
+[DEBUG] [2021-07-05 23:27:25] (0.000) CREATE TABLE "auth_user" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "password" varchar(128) NOT NULL, "last_login" datetime NOT NULL, "is_superuser" bool NOT NULL, "username" varchar(30) NOT NULL UNIQUE, "first_name" varchar(30) NOT NULL, "last_name" varchar(30) NOT NULL, "email" varchar(75) NOT NULL, "is_staff" bool NOT NULL, "is_active" bool NOT NULL, "date_joined" datetime NOT NULL); args=None
+[DEBUG] [2021-07-05 23:27:25] CREATE TABLE "auth_user_groups" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id" integer NOT NULL REFERENCES "auth_user" ("id") DEFERRABLE INITIALLY DEFERRED, "group_id" integer NOT NULL REFERENCES "auth_group" ("id") DEFERRABLE INITIALLY DEFERRED); (params None)
+[DEBUG] [2021-07-05 23:27:25] (0.000) CREATE TABLE "auth_user_groups" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id" integer NOT NULL REFERENCES "auth_user" ("id") DEFERRABLE INITIALLY DEFERRED, "group_id" integer NOT NULL REFERENCES "auth_group" ("id") DEFERRABLE INITIALLY DEFERRED); args=None
+[DEBUG] [2021-07-05 23:27:25] CREATE TABLE "auth_user_user_permissions" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id" integer NOT NULL REFERENCES "auth_user" ("id") DEFERRABLE INITIALLY DEFERRED, "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id") DEFERRABLE INITIALLY DEFERRED); (params None)
+[DEBUG] [2021-07-05 23:27:25] (0.000) CREATE TABLE "auth_user_user_permissions" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "user_id" integer NOT NULL REFERENCES "auth_user" ("id") DEFERRABLE INITIALLY DEFERRED, "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id") DEFERRABLE INITIALLY DEFERRED); args=None
+[DEBUG] [2021-07-05 23:27:25] (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+[DEBUG] [2021-07-05 23:27:25] (0.000) INSERT INTO "django_migrations" ("app", "name", "applied") VALUES ('auth', '0001_initial', '2021-07-05 23:27:25.985479'); args=['auth', '0001_initial', '2021-07-05 23:27:25.985479']
+[DEBUG] [2021-07-05 23:27:25] (0.000) PRAGMA foreign_key_check; args=None
+[DEBUG] [2021-07-05 23:27:25] CREATE UNIQUE INDEX "auth_permission_content_type_id_codename_01ab375a_uniq" ON "auth_permission" ("content_type_id", "codename"); (params ())
+[DEBUG] [2021-07-05 23:27:25] (0.000) CREATE UNIQUE INDEX "auth_permission_content_type_id_codename_01ab375a_uniq" ON "auth_permission" ("content_type_id", "codename"); args=()
+[DEBUG] [2021-07-05 23:27:25] CREATE INDEX "auth_permission_content_type_id_2f476e4b" ON "auth_permission" ("content_type_id"); (params ())
+[DEBUG] [2021-07-05 23:27:25] (0.000) CREATE INDEX "auth_permission_content_type_id_2f476e4b" ON "auth_permission" ("content_type_id"); args=()
+[DEBUG] [2021-07-05 23:27:25] CREATE UNIQUE INDEX "auth_group_permissions_group_id_permission_id_0cd325b0_uniq" ON "auth_group_permissions" ("group_id", "permission_id"); (params ())
+[DEBUG] [2021-07-05 23:27:25] (0.000) CREATE UNIQUE INDEX "auth_group_permissions_group_id_permission_id_0cd325b0_uniq" ON "auth_group_permissions" ("group_id", "permission_id"); args=()
+[DEBUG] [2021-07-05 23:27:25] CREATE INDEX "auth_group_permissions_group_id_b120cbf9" ON "auth_group_permissions" ("group_id"); (params ())
+[DEBUG] [2021-07-05 23:27:25] (0.000) CREATE INDEX "auth_group_permissions_group_id_b120cbf9" ON "auth_group_permissions" ("group_id"); args=()
+[DEBUG] [2021-07-05 23:27:25] CREATE INDEX "auth_group_permissions_permission_id_84c5c92e" ON "auth_group_permissions" ("permission_id"); (params ())
+[DEBUG] [2021-07-05 23:27:25] (0.000) CREATE INDEX "auth_group_permissions_permission_id_84c5c92e" ON "auth_group_permissions" ("permission_id"); args=()
+[DEBUG] [2021-07-05 23:27:25] CREATE UNIQUE INDEX "auth_user_groups_user_id_group_id_94350c0c_uniq" ON "auth_user_groups" ("user_id", "group_id"); (params ())
+[DEBUG] [2021-07-05 23:27:25] (0.000) CREATE UNIQUE INDEX "auth_user_groups_user_id_group_id_94350c0c_uniq" ON "auth_user_groups" ("user_id", "group_id"); args=()
+[DEBUG] [2021-07-05 23:27:25] CREATE INDEX "auth_user_groups_user_id_6a12ed8b" ON "auth_user_groups" ("user_id"); (params ())
+[DEBUG] [2021-07-05 23:27:25] (0.000) CREATE INDEX "auth_user_groups_user_id_6a12ed8b" ON "auth_user_groups" ("user_id"); args=()
+[DEBUG] [2021-07-05 23:27:25] CREATE INDEX "auth_user_groups_group_id_97559544" ON "auth_user_groups" ("group_id"); (params ())
+[DEBUG] [2021-07-05 23:27:25] (0.000) CREATE INDEX "auth_user_groups_group_id_97559544" ON "auth_user_groups" ("group_id"); args=()
+[DEBUG] [2021-07-05 23:27:25] CREATE UNIQUE INDEX "auth_user_user_permissions_user_id_permission_id_14a6b632_uniq" ON "auth_user_user_permissions" ("user_id", "permission_id"); (params ())
+[DEBUG] [2021-07-05 23:27:25] (0.000) CREATE UNIQUE INDEX "auth_user_user_permissions_user_id_permission_id_14a6b632_uniq" ON "auth_user_user_permissions" ("user_id", "permission_id"); args=()
+[DEBUG] [2021-07-05 23:27:25] CREATE INDEX "auth_user_user_permissions_user_id_a95ead1b" ON "auth_user_user_permissions" ("user_id"); (params ())
+[DEBUG] [2021-07-05 23:27:25] (0.000) CREATE INDEX "auth_user_user_permissions_user_id_a95ead1b" ON "auth_user_user_permissions" ("user_id"); args=()
+[DEBUG] [2021-07-05 23:27:25] CREATE INDEX "auth_user_user_permissions_permission_id_1fbb5f2c" ON "auth_user_user_permissions" ("permission_id"); (params ())
+[DEBUG] [2021-07-05 23:27:25] (0.000) CREATE INDEX "auth_user_user_permissions_permission_id_1fbb5f2c" ON "auth_user_user_permissions" ("permission_id"); args=()
+[DEBUG] [2021-07-05 23:27:25] (0.000) PRAGMA foreign_keys = ON; args=None
+[DEBUG] [2021-07-05 23:27:25] (0.000) PRAGMA foreign_keys = OFF; args=None
+[DEBUG] [2021-07-05 23:27:25] (0.000) PRAGMA foreign_keys; args=None
+[DEBUG] [2021-07-05 23:27:25] (0.000) BEGIN; args=None
+[DEBUG] [2021-07-05 23:27:25] CREATE TABLE "django_admin_log" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "action_time" datetime NOT NULL, "object_id" text NULL, "object_repr" varchar(200) NOT NULL, "action_flag" smallint unsigned NOT NULL CHECK ("action_flag" >= 0), "change_message" text NOT NULL, "content_type_id" integer NULL REFERENCES "django_content_type" ("id") DEFERRABLE INITIALLY DEFERRED, "user_id" integer NOT NULL REFERENCES "auth_user" ("id") DEFERRABLE INITIALLY DEFERRED); (params None)
+[DEBUG] [2021-07-05 23:27:25] (0.000) CREATE TABLE "django_admin_log" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "action_time" datetime NOT NULL, "object_id" text NULL, "object_repr" varchar(200) NOT NULL, "action_flag" smallint unsigned NOT NULL CHECK ("action_flag" >= 0), "change_message" text NOT NULL, "content_type_id" integer NULL REFERENCES "django_content_type" ("id") DEFERRABLE INITIALLY DEFERRED, "user_id" integer NOT NULL REFERENCES "auth_user" ("id") DEFERRABLE INITIALLY DEFERRED); args=None
+[DEBUG] [2021-07-05 23:27:25] (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+[DEBUG] [2021-07-05 23:27:25] (0.000) INSERT INTO "django_migrations" ("app", "name", "applied") VALUES ('admin', '0001_initial', '2021-07-05 23:27:25.999501'); args=['admin', '0001_initial', '2021-07-05 23:27:25.999501']
+[DEBUG] [2021-07-05 23:27:25] (0.000) PRAGMA foreign_key_check; args=None
+[DEBUG] [2021-07-05 23:27:25] CREATE INDEX "django_admin_log_content_type_id_c4bce8eb" ON "django_admin_log" ("content_type_id"); (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE INDEX "django_admin_log_content_type_id_c4bce8eb" ON "django_admin_log" ("content_type_id"); args=()
+[DEBUG] [2021-07-05 23:27:26] CREATE INDEX "django_admin_log_user_id_c564eba6" ON "django_admin_log" ("user_id"); (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE INDEX "django_admin_log_user_id_c564eba6" ON "django_admin_log" ("user_id"); args=()
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys = ON; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys = OFF; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) BEGIN; args=None
+[DEBUG] [2021-07-05 23:27:26] CREATE TABLE "new__django_admin_log" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "object_id" text NULL, "object_repr" varchar(200) NOT NULL, "action_flag" smallint unsigned NOT NULL CHECK ("action_flag" >= 0), "change_message" text NOT NULL, "content_type_id" integer NULL REFERENCES "django_content_type" ("id") DEFERRABLE INITIALLY DEFERRED, "user_id" integer NOT NULL REFERENCES "auth_user" ("id") DEFERRABLE INITIALLY DEFERRED, "action_time" datetime NOT NULL); (params None)
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE TABLE "new__django_admin_log" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "object_id" text NULL, "object_repr" varchar(200) NOT NULL, "action_flag" smallint unsigned NOT NULL CHECK ("action_flag" >= 0), "change_message" text NOT NULL, "content_type_id" integer NULL REFERENCES "django_content_type" ("id") DEFERRABLE INITIALLY DEFERRED, "user_id" integer NOT NULL REFERENCES "auth_user" ("id") DEFERRABLE INITIALLY DEFERRED, "action_time" datetime NOT NULL); args=None
+[DEBUG] [2021-07-05 23:27:26] INSERT INTO "new__django_admin_log" ("id", "object_id", "object_repr", "action_flag", "change_message", "content_type_id", "user_id", "action_time") SELECT "id", "object_id", "object_repr", "action_flag", "change_message", "content_type_id", "user_id", "action_time" FROM "django_admin_log"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) INSERT INTO "new__django_admin_log" ("id", "object_id", "object_repr", "action_flag", "change_message", "content_type_id", "user_id", "action_time") SELECT "id", "object_id", "object_repr", "action_flag", "change_message", "content_type_id", "user_id", "action_time" FROM "django_admin_log"; args=()
+[DEBUG] [2021-07-05 23:27:26] DROP TABLE "django_admin_log"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) DROP TABLE "django_admin_log"; args=()
+[DEBUG] [2021-07-05 23:27:26] ALTER TABLE "new__django_admin_log" RENAME TO "django_admin_log"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.001) ALTER TABLE "new__django_admin_log" RENAME TO "django_admin_log"; args=()
+[DEBUG] [2021-07-05 23:27:26] CREATE INDEX "django_admin_log_content_type_id_c4bce8eb" ON "django_admin_log" ("content_type_id"); (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE INDEX "django_admin_log_content_type_id_c4bce8eb" ON "django_admin_log" ("content_type_id"); args=()
+[DEBUG] [2021-07-05 23:27:26] CREATE INDEX "django_admin_log_user_id_c564eba6" ON "django_admin_log" ("user_id"); (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE INDEX "django_admin_log_user_id_c564eba6" ON "django_admin_log" ("user_id"); args=()
+[DEBUG] [2021-07-05 23:27:26] (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) INSERT INTO "django_migrations" ("app", "name", "applied") VALUES ('admin', '0002_logentry_remove_auto_add', '2021-07-05 23:27:26.017380'); args=['admin', '0002_logentry_remove_auto_add', '2021-07-05 23:27:26.017380']
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_key_check; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys = ON; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys = OFF; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) BEGIN; args=None
+[DEBUG] [2021-07-05 23:27:26] CREATE TABLE "new__django_admin_log" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "action_time" datetime NOT NULL, "object_id" text NULL, "object_repr" varchar(200) NOT NULL, "change_message" text NOT NULL, "content_type_id" integer NULL REFERENCES "django_content_type" ("id") DEFERRABLE INITIALLY DEFERRED, "user_id" integer NOT NULL REFERENCES "auth_user" ("id") DEFERRABLE INITIALLY DEFERRED, "action_flag" smallint unsigned NOT NULL CHECK ("action_flag" >= 0)); (params None)
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE TABLE "new__django_admin_log" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "action_time" datetime NOT NULL, "object_id" text NULL, "object_repr" varchar(200) NOT NULL, "change_message" text NOT NULL, "content_type_id" integer NULL REFERENCES "django_content_type" ("id") DEFERRABLE INITIALLY DEFERRED, "user_id" integer NOT NULL REFERENCES "auth_user" ("id") DEFERRABLE INITIALLY DEFERRED, "action_flag" smallint unsigned NOT NULL CHECK ("action_flag" >= 0)); args=None
+[DEBUG] [2021-07-05 23:27:26] INSERT INTO "new__django_admin_log" ("id", "action_time", "object_id", "object_repr", "change_message", "content_type_id", "user_id", "action_flag") SELECT "id", "action_time", "object_id", "object_repr", "change_message", "content_type_id", "user_id", "action_flag" FROM "django_admin_log"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) INSERT INTO "new__django_admin_log" ("id", "action_time", "object_id", "object_repr", "change_message", "content_type_id", "user_id", "action_flag") SELECT "id", "action_time", "object_id", "object_repr", "change_message", "content_type_id", "user_id", "action_flag" FROM "django_admin_log"; args=()
+[DEBUG] [2021-07-05 23:27:26] DROP TABLE "django_admin_log"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) DROP TABLE "django_admin_log"; args=()
+[DEBUG] [2021-07-05 23:27:26] ALTER TABLE "new__django_admin_log" RENAME TO "django_admin_log"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.001) ALTER TABLE "new__django_admin_log" RENAME TO "django_admin_log"; args=()
+[DEBUG] [2021-07-05 23:27:26] CREATE INDEX "django_admin_log_content_type_id_c4bce8eb" ON "django_admin_log" ("content_type_id"); (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE INDEX "django_admin_log_content_type_id_c4bce8eb" ON "django_admin_log" ("content_type_id"); args=()
+[DEBUG] [2021-07-05 23:27:26] CREATE INDEX "django_admin_log_user_id_c564eba6" ON "django_admin_log" ("user_id"); (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE INDEX "django_admin_log_user_id_c564eba6" ON "django_admin_log" ("user_id"); args=()
+[DEBUG] [2021-07-05 23:27:26] (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) INSERT INTO "django_migrations" ("app", "name", "applied") VALUES ('admin', '0003_logentry_add_action_flag_choices', '2021-07-05 23:27:26.031417'); args=['admin', '0003_logentry_add_action_flag_choices', '2021-07-05 23:27:26.031417']
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_key_check; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys = ON; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys = OFF; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) BEGIN; args=None
+[DEBUG] [2021-07-05 23:27:26] CREATE TABLE "new__django_content_type" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL, "name" varchar(100) NULL); (params None)
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE TABLE "new__django_content_type" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL, "name" varchar(100) NULL); args=None
+[DEBUG] [2021-07-05 23:27:26] INSERT INTO "new__django_content_type" ("id", "app_label", "model", "name") SELECT "id", "app_label", "model", "name" FROM "django_content_type"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) INSERT INTO "new__django_content_type" ("id", "app_label", "model", "name") SELECT "id", "app_label", "model", "name" FROM "django_content_type"; args=()
+[DEBUG] [2021-07-05 23:27:26] DROP TABLE "django_content_type"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) DROP TABLE "django_content_type"; args=()
+[DEBUG] [2021-07-05 23:27:26] ALTER TABLE "new__django_content_type" RENAME TO "django_content_type"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) ALTER TABLE "new__django_content_type" RENAME TO "django_content_type"; args=()
+[DEBUG] [2021-07-05 23:27:26] CREATE UNIQUE INDEX "django_content_type_app_label_model_76bd3d3b_uniq" ON "django_content_type" ("app_label", "model"); (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE UNIQUE INDEX "django_content_type_app_label_model_76bd3d3b_uniq" ON "django_content_type" ("app_label", "model"); args=()
+[DEBUG] [2021-07-05 23:27:26] CREATE TABLE "new__django_content_type" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL); (params None)
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE TABLE "new__django_content_type" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "app_label" varchar(100) NOT NULL, "model" varchar(100) NOT NULL); args=None
+[DEBUG] [2021-07-05 23:27:26] INSERT INTO "new__django_content_type" ("id", "app_label", "model") SELECT "id", "app_label", "model" FROM "django_content_type"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) INSERT INTO "new__django_content_type" ("id", "app_label", "model") SELECT "id", "app_label", "model" FROM "django_content_type"; args=()
+[DEBUG] [2021-07-05 23:27:26] DROP TABLE "django_content_type"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) DROP TABLE "django_content_type"; args=()
+[DEBUG] [2021-07-05 23:27:26] ALTER TABLE "new__django_content_type" RENAME TO "django_content_type"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) ALTER TABLE "new__django_content_type" RENAME TO "django_content_type"; args=()
+[DEBUG] [2021-07-05 23:27:26] CREATE UNIQUE INDEX "django_content_type_app_label_model_76bd3d3b_uniq" ON "django_content_type" ("app_label", "model"); (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE UNIQUE INDEX "django_content_type_app_label_model_76bd3d3b_uniq" ON "django_content_type" ("app_label", "model"); args=()
+[DEBUG] [2021-07-05 23:27:26] (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) INSERT INTO "django_migrations" ("app", "name", "applied") VALUES ('contenttypes', '0002_remove_content_type_name', '2021-07-05 23:27:26.051453'); args=['contenttypes', '0002_remove_content_type_name', '2021-07-05 23:27:26.051453']
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_key_check; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys = ON; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys = OFF; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) BEGIN; args=None
+[DEBUG] [2021-07-05 23:27:26] CREATE TABLE "new__auth_permission" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "content_type_id" integer NOT NULL REFERENCES "django_content_type" ("id") DEFERRABLE INITIALLY DEFERRED, "codename" varchar(100) NOT NULL, "name" varchar(255) NOT NULL); (params None)
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE TABLE "new__auth_permission" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "content_type_id" integer NOT NULL REFERENCES "django_content_type" ("id") DEFERRABLE INITIALLY DEFERRED, "codename" varchar(100) NOT NULL, "name" varchar(255) NOT NULL); args=None
+[DEBUG] [2021-07-05 23:27:26] INSERT INTO "new__auth_permission" ("id", "content_type_id", "codename", "name") SELECT "id", "content_type_id", "codename", "name" FROM "auth_permission"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) INSERT INTO "new__auth_permission" ("id", "content_type_id", "codename", "name") SELECT "id", "content_type_id", "codename", "name" FROM "auth_permission"; args=()
+[DEBUG] [2021-07-05 23:27:26] DROP TABLE "auth_permission"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) DROP TABLE "auth_permission"; args=()
+[DEBUG] [2021-07-05 23:27:26] ALTER TABLE "new__auth_permission" RENAME TO "auth_permission"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) ALTER TABLE "new__auth_permission" RENAME TO "auth_permission"; args=()
+[DEBUG] [2021-07-05 23:27:26] CREATE UNIQUE INDEX "auth_permission_content_type_id_codename_01ab375a_uniq" ON "auth_permission" ("content_type_id", "codename"); (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE UNIQUE INDEX "auth_permission_content_type_id_codename_01ab375a_uniq" ON "auth_permission" ("content_type_id", "codename"); args=()
+[DEBUG] [2021-07-05 23:27:26] CREATE INDEX "auth_permission_content_type_id_2f476e4b" ON "auth_permission" ("content_type_id"); (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE INDEX "auth_permission_content_type_id_2f476e4b" ON "auth_permission" ("content_type_id"); args=()
+[DEBUG] [2021-07-05 23:27:26] (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) INSERT INTO "django_migrations" ("app", "name", "applied") VALUES ('auth', '0002_alter_permission_name_max_length', '2021-07-05 23:27:26.063808'); args=['auth', '0002_alter_permission_name_max_length', '2021-07-05 23:27:26.063808']
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_key_check; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys = ON; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys = OFF; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) BEGIN; args=None
+[DEBUG] [2021-07-05 23:27:26] CREATE TABLE "new__auth_user" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "password" varchar(128) NOT NULL, "last_login" datetime NOT NULL, "is_superuser" bool NOT NULL, "username" varchar(30) NOT NULL UNIQUE, "first_name" varchar(30) NOT NULL, "last_name" varchar(30) NOT NULL, "is_staff" bool NOT NULL, "is_active" bool NOT NULL, "date_joined" datetime NOT NULL, "email" varchar(254) NOT NULL); (params None)
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE TABLE "new__auth_user" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "password" varchar(128) NOT NULL, "last_login" datetime NOT NULL, "is_superuser" bool NOT NULL, "username" varchar(30) NOT NULL UNIQUE, "first_name" varchar(30) NOT NULL, "last_name" varchar(30) NOT NULL, "is_staff" bool NOT NULL, "is_active" bool NOT NULL, "date_joined" datetime NOT NULL, "email" varchar(254) NOT NULL); args=None
+[DEBUG] [2021-07-05 23:27:26] INSERT INTO "new__auth_user" ("id", "password", "last_login", "is_superuser", "username", "first_name", "last_name", "is_staff", "is_active", "date_joined", "email") SELECT "id", "password", "last_login", "is_superuser", "username", "first_name", "last_name", "is_staff", "is_active", "date_joined", "email" FROM "auth_user"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) INSERT INTO "new__auth_user" ("id", "password", "last_login", "is_superuser", "username", "first_name", "last_name", "is_staff", "is_active", "date_joined", "email") SELECT "id", "password", "last_login", "is_superuser", "username", "first_name", "last_name", "is_staff", "is_active", "date_joined", "email" FROM "auth_user"; args=()
+[DEBUG] [2021-07-05 23:27:26] DROP TABLE "auth_user"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) DROP TABLE "auth_user"; args=()
+[DEBUG] [2021-07-05 23:27:26] ALTER TABLE "new__auth_user" RENAME TO "auth_user"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.001) ALTER TABLE "new__auth_user" RENAME TO "auth_user"; args=()
+[DEBUG] [2021-07-05 23:27:26] (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) INSERT INTO "django_migrations" ("app", "name", "applied") VALUES ('auth', '0003_alter_user_email_max_length', '2021-07-05 23:27:26.078095'); args=['auth', '0003_alter_user_email_max_length', '2021-07-05 23:27:26.078095']
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_key_check; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys = ON; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys = OFF; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) BEGIN; args=None
+[DEBUG] [2021-07-05 23:27:26] CREATE TABLE "new__auth_user" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "password" varchar(128) NOT NULL, "last_login" datetime NOT NULL, "is_superuser" bool NOT NULL, "first_name" varchar(30) NOT NULL, "last_name" varchar(30) NOT NULL, "email" varchar(254) NOT NULL, "is_staff" bool NOT NULL, "is_active" bool NOT NULL, "date_joined" datetime NOT NULL, "username" varchar(30) NOT NULL UNIQUE); (params None)
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE TABLE "new__auth_user" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "password" varchar(128) NOT NULL, "last_login" datetime NOT NULL, "is_superuser" bool NOT NULL, "first_name" varchar(30) NOT NULL, "last_name" varchar(30) NOT NULL, "email" varchar(254) NOT NULL, "is_staff" bool NOT NULL, "is_active" bool NOT NULL, "date_joined" datetime NOT NULL, "username" varchar(30) NOT NULL UNIQUE); args=None
+[DEBUG] [2021-07-05 23:27:26] INSERT INTO "new__auth_user" ("id", "password", "last_login", "is_superuser", "first_name", "last_name", "email", "is_staff", "is_active", "date_joined", "username") SELECT "id", "password", "last_login", "is_superuser", "first_name", "last_name", "email", "is_staff", "is_active", "date_joined", "username" FROM "auth_user"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) INSERT INTO "new__auth_user" ("id", "password", "last_login", "is_superuser", "first_name", "last_name", "email", "is_staff", "is_active", "date_joined", "username") SELECT "id", "password", "last_login", "is_superuser", "first_name", "last_name", "email", "is_staff", "is_active", "date_joined", "username" FROM "auth_user"; args=()
+[DEBUG] [2021-07-05 23:27:26] DROP TABLE "auth_user"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) DROP TABLE "auth_user"; args=()
+[DEBUG] [2021-07-05 23:27:26] ALTER TABLE "new__auth_user" RENAME TO "auth_user"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.001) ALTER TABLE "new__auth_user" RENAME TO "auth_user"; args=()
+[DEBUG] [2021-07-05 23:27:26] (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) INSERT INTO "django_migrations" ("app", "name", "applied") VALUES ('auth', '0004_alter_user_username_opts', '2021-07-05 23:27:26.092064'); args=['auth', '0004_alter_user_username_opts', '2021-07-05 23:27:26.092064']
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_key_check; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys = ON; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys = OFF; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) BEGIN; args=None
+[DEBUG] [2021-07-05 23:27:26] CREATE TABLE "new__auth_user" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "password" varchar(128) NOT NULL, "is_superuser" bool NOT NULL, "username" varchar(30) NOT NULL UNIQUE, "first_name" varchar(30) NOT NULL, "last_name" varchar(30) NOT NULL, "email" varchar(254) NOT NULL, "is_staff" bool NOT NULL, "is_active" bool NOT NULL, "date_joined" datetime NOT NULL, "last_login" datetime NULL); (params None)
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE TABLE "new__auth_user" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "password" varchar(128) NOT NULL, "is_superuser" bool NOT NULL, "username" varchar(30) NOT NULL UNIQUE, "first_name" varchar(30) NOT NULL, "last_name" varchar(30) NOT NULL, "email" varchar(254) NOT NULL, "is_staff" bool NOT NULL, "is_active" bool NOT NULL, "date_joined" datetime NOT NULL, "last_login" datetime NULL); args=None
+[DEBUG] [2021-07-05 23:27:26] INSERT INTO "new__auth_user" ("id", "password", "is_superuser", "username", "first_name", "last_name", "email", "is_staff", "is_active", "date_joined", "last_login") SELECT "id", "password", "is_superuser", "username", "first_name", "last_name", "email", "is_staff", "is_active", "date_joined", "last_login" FROM "auth_user"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) INSERT INTO "new__auth_user" ("id", "password", "is_superuser", "username", "first_name", "last_name", "email", "is_staff", "is_active", "date_joined", "last_login") SELECT "id", "password", "is_superuser", "username", "first_name", "last_name", "email", "is_staff", "is_active", "date_joined", "last_login" FROM "auth_user"; args=()
+[DEBUG] [2021-07-05 23:27:26] DROP TABLE "auth_user"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) DROP TABLE "auth_user"; args=()
+[DEBUG] [2021-07-05 23:27:26] ALTER TABLE "new__auth_user" RENAME TO "auth_user"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.001) ALTER TABLE "new__auth_user" RENAME TO "auth_user"; args=()
+[DEBUG] [2021-07-05 23:27:26] (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) INSERT INTO "django_migrations" ("app", "name", "applied") VALUES ('auth', '0005_alter_user_last_login_null', '2021-07-05 23:27:26.104876'); args=['auth', '0005_alter_user_last_login_null', '2021-07-05 23:27:26.104876']
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_key_check; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys = ON; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys = OFF; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) BEGIN; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) INSERT INTO "django_migrations" ("app", "name", "applied") VALUES ('auth', '0006_require_contenttypes_0002', '2021-07-05 23:27:26.110832'); args=['auth', '0006_require_contenttypes_0002', '2021-07-05 23:27:26.110832']
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_key_check; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys = ON; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys = OFF; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) BEGIN; args=None
+[DEBUG] [2021-07-05 23:27:26] CREATE TABLE "new__auth_user" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "password" varchar(128) NOT NULL, "last_login" datetime NULL, "is_superuser" bool NOT NULL, "first_name" varchar(30) NOT NULL, "last_name" varchar(30) NOT NULL, "email" varchar(254) NOT NULL, "is_staff" bool NOT NULL, "is_active" bool NOT NULL, "date_joined" datetime NOT NULL, "username" varchar(30) NOT NULL UNIQUE); (params None)
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE TABLE "new__auth_user" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "password" varchar(128) NOT NULL, "last_login" datetime NULL, "is_superuser" bool NOT NULL, "first_name" varchar(30) NOT NULL, "last_name" varchar(30) NOT NULL, "email" varchar(254) NOT NULL, "is_staff" bool NOT NULL, "is_active" bool NOT NULL, "date_joined" datetime NOT NULL, "username" varchar(30) NOT NULL UNIQUE); args=None
+[DEBUG] [2021-07-05 23:27:26] INSERT INTO "new__auth_user" ("id", "password", "last_login", "is_superuser", "first_name", "last_name", "email", "is_staff", "is_active", "date_joined", "username") SELECT "id", "password", "last_login", "is_superuser", "first_name", "last_name", "email", "is_staff", "is_active", "date_joined", "username" FROM "auth_user"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) INSERT INTO "new__auth_user" ("id", "password", "last_login", "is_superuser", "first_name", "last_name", "email", "is_staff", "is_active", "date_joined", "username") SELECT "id", "password", "last_login", "is_superuser", "first_name", "last_name", "email", "is_staff", "is_active", "date_joined", "username" FROM "auth_user"; args=()
+[DEBUG] [2021-07-05 23:27:26] DROP TABLE "auth_user"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) DROP TABLE "auth_user"; args=()
+[DEBUG] [2021-07-05 23:27:26] ALTER TABLE "new__auth_user" RENAME TO "auth_user"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.001) ALTER TABLE "new__auth_user" RENAME TO "auth_user"; args=()
+[DEBUG] [2021-07-05 23:27:26] (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) INSERT INTO "django_migrations" ("app", "name", "applied") VALUES ('auth', '0007_alter_validators_add_error_messages', '2021-07-05 23:27:26.122719'); args=['auth', '0007_alter_validators_add_error_messages', '2021-07-05 23:27:26.122719']
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_key_check; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys = ON; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys = OFF; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) BEGIN; args=None
+[DEBUG] [2021-07-05 23:27:26] CREATE TABLE "new__auth_user" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "password" varchar(128) NOT NULL, "last_login" datetime NULL, "is_superuser" bool NOT NULL, "first_name" varchar(30) NOT NULL, "last_name" varchar(30) NOT NULL, "email" varchar(254) NOT NULL, "is_staff" bool NOT NULL, "is_active" bool NOT NULL, "date_joined" datetime NOT NULL, "username" varchar(150) NOT NULL UNIQUE); (params None)
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE TABLE "new__auth_user" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "password" varchar(128) NOT NULL, "last_login" datetime NULL, "is_superuser" bool NOT NULL, "first_name" varchar(30) NOT NULL, "last_name" varchar(30) NOT NULL, "email" varchar(254) NOT NULL, "is_staff" bool NOT NULL, "is_active" bool NOT NULL, "date_joined" datetime NOT NULL, "username" varchar(150) NOT NULL UNIQUE); args=None
+[DEBUG] [2021-07-05 23:27:26] INSERT INTO "new__auth_user" ("id", "password", "last_login", "is_superuser", "first_name", "last_name", "email", "is_staff", "is_active", "date_joined", "username") SELECT "id", "password", "last_login", "is_superuser", "first_name", "last_name", "email", "is_staff", "is_active", "date_joined", "username" FROM "auth_user"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) INSERT INTO "new__auth_user" ("id", "password", "last_login", "is_superuser", "first_name", "last_name", "email", "is_staff", "is_active", "date_joined", "username") SELECT "id", "password", "last_login", "is_superuser", "first_name", "last_name", "email", "is_staff", "is_active", "date_joined", "username" FROM "auth_user"; args=()
+[DEBUG] [2021-07-05 23:27:26] DROP TABLE "auth_user"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) DROP TABLE "auth_user"; args=()
+[DEBUG] [2021-07-05 23:27:26] ALTER TABLE "new__auth_user" RENAME TO "auth_user"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.001) ALTER TABLE "new__auth_user" RENAME TO "auth_user"; args=()
+[DEBUG] [2021-07-05 23:27:26] (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) INSERT INTO "django_migrations" ("app", "name", "applied") VALUES ('auth', '0008_alter_user_username_max_length', '2021-07-05 23:27:26.136837'); args=['auth', '0008_alter_user_username_max_length', '2021-07-05 23:27:26.136837']
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_key_check; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys = ON; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys = OFF; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) BEGIN; args=None
+[DEBUG] [2021-07-05 23:27:26] CREATE TABLE "new__auth_user" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "password" varchar(128) NOT NULL, "last_login" datetime NULL, "is_superuser" bool NOT NULL, "username" varchar(150) NOT NULL UNIQUE, "first_name" varchar(30) NOT NULL, "email" varchar(254) NOT NULL, "is_staff" bool NOT NULL, "is_active" bool NOT NULL, "date_joined" datetime NOT NULL, "last_name" varchar(150) NOT NULL); (params None)
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE TABLE "new__auth_user" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "password" varchar(128) NOT NULL, "last_login" datetime NULL, "is_superuser" bool NOT NULL, "username" varchar(150) NOT NULL UNIQUE, "first_name" varchar(30) NOT NULL, "email" varchar(254) NOT NULL, "is_staff" bool NOT NULL, "is_active" bool NOT NULL, "date_joined" datetime NOT NULL, "last_name" varchar(150) NOT NULL); args=None
+[DEBUG] [2021-07-05 23:27:26] INSERT INTO "new__auth_user" ("id", "password", "last_login", "is_superuser", "username", "first_name", "email", "is_staff", "is_active", "date_joined", "last_name") SELECT "id", "password", "last_login", "is_superuser", "username", "first_name", "email", "is_staff", "is_active", "date_joined", "last_name" FROM "auth_user"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) INSERT INTO "new__auth_user" ("id", "password", "last_login", "is_superuser", "username", "first_name", "email", "is_staff", "is_active", "date_joined", "last_name") SELECT "id", "password", "last_login", "is_superuser", "username", "first_name", "email", "is_staff", "is_active", "date_joined", "last_name" FROM "auth_user"; args=()
+[DEBUG] [2021-07-05 23:27:26] DROP TABLE "auth_user"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) DROP TABLE "auth_user"; args=()
+[DEBUG] [2021-07-05 23:27:26] ALTER TABLE "new__auth_user" RENAME TO "auth_user"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.001) ALTER TABLE "new__auth_user" RENAME TO "auth_user"; args=()
+[DEBUG] [2021-07-05 23:27:26] (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) INSERT INTO "django_migrations" ("app", "name", "applied") VALUES ('auth', '0009_alter_user_last_name_max_length', '2021-07-05 23:27:26.150380'); args=['auth', '0009_alter_user_last_name_max_length', '2021-07-05 23:27:26.150380']
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_key_check; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys = ON; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys = OFF; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) BEGIN; args=None
+[DEBUG] [2021-07-05 23:27:26] CREATE TABLE "new__auth_group" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(150) NOT NULL UNIQUE); (params None)
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE TABLE "new__auth_group" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(150) NOT NULL UNIQUE); args=None
+[DEBUG] [2021-07-05 23:27:26] INSERT INTO "new__auth_group" ("id", "name") SELECT "id", "name" FROM "auth_group"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) INSERT INTO "new__auth_group" ("id", "name") SELECT "id", "name" FROM "auth_group"; args=()
+[DEBUG] [2021-07-05 23:27:26] DROP TABLE "auth_group"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) DROP TABLE "auth_group"; args=()
+[DEBUG] [2021-07-05 23:27:26] ALTER TABLE "new__auth_group" RENAME TO "auth_group"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) ALTER TABLE "new__auth_group" RENAME TO "auth_group"; args=()
+[DEBUG] [2021-07-05 23:27:26] (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) INSERT INTO "django_migrations" ("app", "name", "applied") VALUES ('auth', '0010_alter_group_name_max_length', '2021-07-05 23:27:26.163185'); args=['auth', '0010_alter_group_name_max_length', '2021-07-05 23:27:26.163185']
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_key_check; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys = ON; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys = OFF; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) BEGIN; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) INSERT INTO "django_migrations" ("app", "name", "applied") VALUES ('auth', '0011_update_proxy_permissions', '2021-07-05 23:27:26.173002'); args=['auth', '0011_update_proxy_permissions', '2021-07-05 23:27:26.173002']
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_key_check; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys = ON; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys = OFF; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) BEGIN; args=None
+[DEBUG] [2021-07-05 23:27:26] CREATE TABLE "new__auth_user" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "password" varchar(128) NOT NULL, "last_login" datetime NULL, "is_superuser" bool NOT NULL, "username" varchar(150) NOT NULL UNIQUE, "last_name" varchar(150) NOT NULL, "email" varchar(254) NOT NULL, "is_staff" bool NOT NULL, "is_active" bool NOT NULL, "date_joined" datetime NOT NULL, "first_name" varchar(150) NOT NULL); (params None)
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE TABLE "new__auth_user" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "password" varchar(128) NOT NULL, "last_login" datetime NULL, "is_superuser" bool NOT NULL, "username" varchar(150) NOT NULL UNIQUE, "last_name" varchar(150) NOT NULL, "email" varchar(254) NOT NULL, "is_staff" bool NOT NULL, "is_active" bool NOT NULL, "date_joined" datetime NOT NULL, "first_name" varchar(150) NOT NULL); args=None
+[DEBUG] [2021-07-05 23:27:26] INSERT INTO "new__auth_user" ("id", "password", "last_login", "is_superuser", "username", "last_name", "email", "is_staff", "is_active", "date_joined", "first_name") SELECT "id", "password", "last_login", "is_superuser", "username", "last_name", "email", "is_staff", "is_active", "date_joined", "first_name" FROM "auth_user"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) INSERT INTO "new__auth_user" ("id", "password", "last_login", "is_superuser", "username", "last_name", "email", "is_staff", "is_active", "date_joined", "first_name") SELECT "id", "password", "last_login", "is_superuser", "username", "last_name", "email", "is_staff", "is_active", "date_joined", "first_name" FROM "auth_user"; args=()
+[DEBUG] [2021-07-05 23:27:26] DROP TABLE "auth_user"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) DROP TABLE "auth_user"; args=()
+[DEBUG] [2021-07-05 23:27:26] ALTER TABLE "new__auth_user" RENAME TO "auth_user"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.001) ALTER TABLE "new__auth_user" RENAME TO "auth_user"; args=()
+[DEBUG] [2021-07-05 23:27:26] (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) INSERT INTO "django_migrations" ("app", "name", "applied") VALUES ('auth', '0012_alter_user_first_name_max_length', '2021-07-05 23:27:26.186391'); args=['auth', '0012_alter_user_first_name_max_length', '2021-07-05 23:27:26.186391']
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_key_check; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys = ON; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys = OFF; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) BEGIN; args=None
+[DEBUG] [2021-07-05 23:27:26] CREATE TABLE "judge_problem" ("name" varchar(32) NOT NULL PRIMARY KEY, "staff_viewable_only" bool NOT NULL, "title" varchar(32) NOT NULL, "description" text NOT NULL, "input_format" text NOT NULL, "output_format" text NOT NULL, "sample_input" text NOT NULL, "sample_output" text NOT NULL, "deadline_datetime" datetime NOT NULL, "group_id" integer NULL REFERENCES "auth_group" ("id") DEFERRABLE INITIALLY DEFERRED); (params None)
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE TABLE "judge_problem" ("name" varchar(32) NOT NULL PRIMARY KEY, "staff_viewable_only" bool NOT NULL, "title" varchar(32) NOT NULL, "description" text NOT NULL, "input_format" text NOT NULL, "output_format" text NOT NULL, "sample_input" text NOT NULL, "sample_output" text NOT NULL, "deadline_datetime" datetime NOT NULL, "group_id" integer NULL REFERENCES "auth_group" ("id") DEFERRABLE INITIALLY DEFERRED); args=None
+[DEBUG] [2021-07-05 23:27:26] CREATE TABLE "judge_profile" ("user_id" integer NOT NULL PRIMARY KEY REFERENCES "auth_user" ("id") DEFERRABLE INITIALLY DEFERRED, "name" varchar(32) NOT NULL, "github_account" varchar(32) NOT NULL, "github_repository" varchar(32) NOT NULL); (params None)
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE TABLE "judge_profile" ("user_id" integer NOT NULL PRIMARY KEY REFERENCES "auth_user" ("id") DEFERRABLE INITIALLY DEFERRED, "name" varchar(32) NOT NULL, "github_account" varchar(32) NOT NULL, "github_repository" varchar(32) NOT NULL); args=None
+[DEBUG] [2021-07-05 23:27:26] CREATE TABLE "judge_profile_solved_problems" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "profile_id" integer NOT NULL REFERENCES "judge_profile" ("user_id") DEFERRABLE INITIALLY DEFERRED, "problem_id" varchar(32) NOT NULL REFERENCES "judge_problem" ("name") DEFERRABLE INITIALLY DEFERRED); (params None)
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE TABLE "judge_profile_solved_problems" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "profile_id" integer NOT NULL REFERENCES "judge_profile" ("user_id") DEFERRABLE INITIALLY DEFERRED, "problem_id" varchar(32) NOT NULL REFERENCES "judge_problem" ("name") DEFERRABLE INITIALLY DEFERRED); args=None
+[DEBUG] [2021-07-05 23:27:26] CREATE TABLE "judge_submission" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "status" varchar(2) NOT NULL, "submission_datetime" datetime NOT NULL, "detailed_messages" text NOT NULL, "detailed_messages_stderr" text NOT NULL, "problem_id" varchar(32) NOT NULL REFERENCES "judge_problem" ("name") DEFERRABLE INITIALLY DEFERRED, "profile_id" integer NOT NULL REFERENCES "judge_profile" ("user_id") DEFERRABLE INITIALLY DEFERRED); (params None)
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE TABLE "judge_submission" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "status" varchar(2) NOT NULL, "submission_datetime" datetime NOT NULL, "detailed_messages" text NOT NULL, "detailed_messages_stderr" text NOT NULL, "problem_id" varchar(32) NOT NULL REFERENCES "judge_problem" ("name") DEFERRABLE INITIALLY DEFERRED, "profile_id" integer NOT NULL REFERENCES "judge_profile" ("user_id") DEFERRABLE INITIALLY DEFERRED); args=None
+[DEBUG] [2021-07-05 23:27:26] CREATE TABLE "judge_requiredfile" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "filename" varchar(32) NOT NULL, "via" varchar(1) NOT NULL, "problem_id" varchar(32) NOT NULL REFERENCES "judge_problem" ("name") DEFERRABLE INITIALLY DEFERRED); (params None)
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE TABLE "judge_requiredfile" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "filename" varchar(32) NOT NULL, "via" varchar(1) NOT NULL, "problem_id" varchar(32) NOT NULL REFERENCES "judge_problem" ("name") DEFERRABLE INITIALLY DEFERRED); args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) INSERT INTO "django_migrations" ("app", "name", "applied") VALUES ('judge', '0001_initial', '2021-07-05 23:27:26.218371'); args=['judge', '0001_initial', '2021-07-05 23:27:26.218371']
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_key_check; args=None
+[DEBUG] [2021-07-05 23:27:26] CREATE INDEX "judge_problem_group_id_1b7ca650" ON "judge_problem" ("group_id"); (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE INDEX "judge_problem_group_id_1b7ca650" ON "judge_problem" ("group_id"); args=()
+[DEBUG] [2021-07-05 23:27:26] CREATE UNIQUE INDEX "judge_profile_solved_problems_profile_id_problem_id_b68af88b_uniq" ON "judge_profile_solved_problems" ("profile_id", "problem_id"); (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE UNIQUE INDEX "judge_profile_solved_problems_profile_id_problem_id_b68af88b_uniq" ON "judge_profile_solved_problems" ("profile_id", "problem_id"); args=()
+[DEBUG] [2021-07-05 23:27:26] CREATE INDEX "judge_profile_solved_problems_profile_id_49c9d1f7" ON "judge_profile_solved_problems" ("profile_id"); (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE INDEX "judge_profile_solved_problems_profile_id_49c9d1f7" ON "judge_profile_solved_problems" ("profile_id"); args=()
+[DEBUG] [2021-07-05 23:27:26] CREATE INDEX "judge_profile_solved_problems_problem_id_f174d5f8" ON "judge_profile_solved_problems" ("problem_id"); (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE INDEX "judge_profile_solved_problems_problem_id_f174d5f8" ON "judge_profile_solved_problems" ("problem_id"); args=()
+[DEBUG] [2021-07-05 23:27:26] CREATE INDEX "judge_submission_problem_id_d2fabe38" ON "judge_submission" ("problem_id"); (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE INDEX "judge_submission_problem_id_d2fabe38" ON "judge_submission" ("problem_id"); args=()
+[DEBUG] [2021-07-05 23:27:26] CREATE INDEX "judge_submission_profile_id_a6adff5b" ON "judge_submission" ("profile_id"); (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE INDEX "judge_submission_profile_id_a6adff5b" ON "judge_submission" ("profile_id"); args=()
+[DEBUG] [2021-07-05 23:27:26] CREATE INDEX "judge_requiredfile_problem_id_a739e8ab" ON "judge_requiredfile" ("problem_id"); (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE INDEX "judge_requiredfile_problem_id_a739e8ab" ON "judge_requiredfile" ("problem_id"); args=()
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys = ON; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys = OFF; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) BEGIN; args=None
+[DEBUG] [2021-07-05 23:27:26] CREATE TABLE "judge_account" ("user_id" integer NOT NULL PRIMARY KEY REFERENCES "auth_user" ("id") DEFERRABLE INITIALLY DEFERRED); (params None)
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE TABLE "judge_account" ("user_id" integer NOT NULL PRIMARY KEY REFERENCES "auth_user" ("id") DEFERRABLE INITIALLY DEFERRED); args=None
+[DEBUG] [2021-07-05 23:27:26] CREATE TABLE "new__judge_problem" ("name" varchar(32) NOT NULL PRIMARY KEY, "staff_viewable_only" bool NOT NULL, "title" varchar(32) NOT NULL, "description" text NOT NULL, "input_format" text NOT NULL, "output_format" text NOT NULL, "sample_input" text NOT NULL, "sample_output" text NOT NULL, "deadline_datetime" datetime NOT NULL, "group_id" integer NULL REFERENCES "auth_group" ("id") DEFERRABLE INITIALLY DEFERRED, "language" varchar(2) NOT NULL); (params None)
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE TABLE "new__judge_problem" ("name" varchar(32) NOT NULL PRIMARY KEY, "staff_viewable_only" bool NOT NULL, "title" varchar(32) NOT NULL, "description" text NOT NULL, "input_format" text NOT NULL, "output_format" text NOT NULL, "sample_input" text NOT NULL, "sample_output" text NOT NULL, "deadline_datetime" datetime NOT NULL, "group_id" integer NULL REFERENCES "auth_group" ("id") DEFERRABLE INITIALLY DEFERRED, "language" varchar(2) NOT NULL); args=None
+[DEBUG] [2021-07-05 23:27:26] INSERT INTO "new__judge_problem" ("name", "staff_viewable_only", "title", "description", "input_format", "output_format", "sample_input", "sample_output", "deadline_datetime", "group_id", "language") SELECT "name", "staff_viewable_only", "title", "description", "input_format", "output_format", "sample_input", "sample_output", "deadline_datetime", "group_id", 'JA' FROM "judge_problem"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) INSERT INTO "new__judge_problem" ("name", "staff_viewable_only", "title", "description", "input_format", "output_format", "sample_input", "sample_output", "deadline_datetime", "group_id", "language") SELECT "name", "staff_viewable_only", "title", "description", "input_format", "output_format", "sample_input", "sample_output", "deadline_datetime", "group_id", 'JA' FROM "judge_problem"; args=()
+[DEBUG] [2021-07-05 23:27:26] DROP TABLE "judge_problem"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) DROP TABLE "judge_problem"; args=()
+[DEBUG] [2021-07-05 23:27:26] ALTER TABLE "new__judge_problem" RENAME TO "judge_problem"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.001) ALTER TABLE "new__judge_problem" RENAME TO "judge_problem"; args=()
+[DEBUG] [2021-07-05 23:27:26] CREATE INDEX "judge_problem_group_id_1b7ca650" ON "judge_problem" ("group_id"); (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE INDEX "judge_problem_group_id_1b7ca650" ON "judge_problem" ("group_id"); args=()
+[DEBUG] [2021-07-05 23:27:26] (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) INSERT INTO "django_migrations" ("app", "name", "applied") VALUES ('judge', '0002_auto_20210331_2354', '2021-07-05 23:27:26.243426'); args=['judge', '0002_auto_20210331_2354', '2021-07-05 23:27:26.243426']
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_key_check; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys = ON; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys = OFF; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) BEGIN; args=None
+[DEBUG] [2021-07-05 23:27:26] CREATE TABLE "judge_course" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(32) NOT NULL, "instructor" varchar(16) NOT NULL); (params None)
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE TABLE "judge_course" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(32) NOT NULL, "instructor" varchar(16) NOT NULL); args=None
+[DEBUG] [2021-07-05 23:27:26] CREATE TABLE "new__judge_problem" ("name" varchar(32) NOT NULL PRIMARY KEY, "staff_viewable_only" bool NOT NULL, "title" varchar(32) NOT NULL, "description" text NOT NULL, "input_format" text NOT NULL, "output_format" text NOT NULL, "sample_input" text NOT NULL, "sample_output" text NOT NULL, "deadline_datetime" datetime NOT NULL, "language" varchar(2) NOT NULL); (params None)
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE TABLE "new__judge_problem" ("name" varchar(32) NOT NULL PRIMARY KEY, "staff_viewable_only" bool NOT NULL, "title" varchar(32) NOT NULL, "description" text NOT NULL, "input_format" text NOT NULL, "output_format" text NOT NULL, "sample_input" text NOT NULL, "sample_output" text NOT NULL, "deadline_datetime" datetime NOT NULL, "language" varchar(2) NOT NULL); args=None
+[DEBUG] [2021-07-05 23:27:26] INSERT INTO "new__judge_problem" ("name", "staff_viewable_only", "title", "description", "input_format", "output_format", "sample_input", "sample_output", "deadline_datetime", "language") SELECT "name", "staff_viewable_only", "title", "description", "input_format", "output_format", "sample_input", "sample_output", "deadline_datetime", "language" FROM "judge_problem"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) INSERT INTO "new__judge_problem" ("name", "staff_viewable_only", "title", "description", "input_format", "output_format", "sample_input", "sample_output", "deadline_datetime", "language") SELECT "name", "staff_viewable_only", "title", "description", "input_format", "output_format", "sample_input", "sample_output", "deadline_datetime", "language" FROM "judge_problem"; args=()
+[DEBUG] [2021-07-05 23:27:26] DROP TABLE "judge_problem"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) DROP TABLE "judge_problem"; args=()
+[DEBUG] [2021-07-05 23:27:26] ALTER TABLE "new__judge_problem" RENAME TO "judge_problem"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.001) ALTER TABLE "new__judge_problem" RENAME TO "judge_problem"; args=()
+[DEBUG] [2021-07-05 23:27:26] CREATE TABLE "new__judge_problem" ("name" varchar(32) NOT NULL PRIMARY KEY, "staff_viewable_only" bool NOT NULL, "title" varchar(32) NOT NULL, "description" text NOT NULL, "input_format" text NOT NULL, "output_format" text NOT NULL, "sample_input" text NOT NULL, "sample_output" text NOT NULL, "deadline_datetime" datetime NOT NULL, "language" varchar(2) NOT NULL, "course_id" integer NULL REFERENCES "judge_course" ("id") DEFERRABLE INITIALLY DEFERRED); (params None)
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE TABLE "new__judge_problem" ("name" varchar(32) NOT NULL PRIMARY KEY, "staff_viewable_only" bool NOT NULL, "title" varchar(32) NOT NULL, "description" text NOT NULL, "input_format" text NOT NULL, "output_format" text NOT NULL, "sample_input" text NOT NULL, "sample_output" text NOT NULL, "deadline_datetime" datetime NOT NULL, "language" varchar(2) NOT NULL, "course_id" integer NULL REFERENCES "judge_course" ("id") DEFERRABLE INITIALLY DEFERRED); args=None
+[DEBUG] [2021-07-05 23:27:26] INSERT INTO "new__judge_problem" ("name", "staff_viewable_only", "title", "description", "input_format", "output_format", "sample_input", "sample_output", "deadline_datetime", "language", "course_id") SELECT "name", "staff_viewable_only", "title", "description", "input_format", "output_format", "sample_input", "sample_output", "deadline_datetime", "language", NULL FROM "judge_problem"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) INSERT INTO "new__judge_problem" ("name", "staff_viewable_only", "title", "description", "input_format", "output_format", "sample_input", "sample_output", "deadline_datetime", "language", "course_id") SELECT "name", "staff_viewable_only", "title", "description", "input_format", "output_format", "sample_input", "sample_output", "deadline_datetime", "language", NULL FROM "judge_problem"; args=()
+[DEBUG] [2021-07-05 23:27:26] DROP TABLE "judge_problem"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) DROP TABLE "judge_problem"; args=()
+[DEBUG] [2021-07-05 23:27:26] ALTER TABLE "new__judge_problem" RENAME TO "judge_problem"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.001) ALTER TABLE "new__judge_problem" RENAME TO "judge_problem"; args=()
+[DEBUG] [2021-07-05 23:27:26] CREATE INDEX "judge_problem_course_id_f6afc851" ON "judge_problem" ("course_id"); (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE INDEX "judge_problem_course_id_f6afc851" ON "judge_problem" ("course_id"); args=()
+[DEBUG] [2021-07-05 23:27:26] CREATE TABLE "judge_profile_course" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "profile_id" integer NOT NULL REFERENCES "judge_profile" ("user_id") DEFERRABLE INITIALLY DEFERRED, "course_id" integer NOT NULL REFERENCES "judge_course" ("id") DEFERRABLE INITIALLY DEFERRED); (params None)
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE TABLE "judge_profile_course" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "profile_id" integer NOT NULL REFERENCES "judge_profile" ("user_id") DEFERRABLE INITIALLY DEFERRED, "course_id" integer NOT NULL REFERENCES "judge_course" ("id") DEFERRABLE INITIALLY DEFERRED); args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) INSERT INTO "django_migrations" ("app", "name", "applied") VALUES ('judge', '0003_auto_20210405_2015', '2021-07-05 23:27:26.307601'); args=['judge', '0003_auto_20210405_2015', '2021-07-05 23:27:26.307601']
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_key_check; args=None
+[DEBUG] [2021-07-05 23:27:26] CREATE UNIQUE INDEX "judge_profile_course_profile_id_course_id_3b176659_uniq" ON "judge_profile_course" ("profile_id", "course_id"); (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE UNIQUE INDEX "judge_profile_course_profile_id_course_id_3b176659_uniq" ON "judge_profile_course" ("profile_id", "course_id"); args=()
+[DEBUG] [2021-07-05 23:27:26] CREATE INDEX "judge_profile_course_profile_id_b2573fc6" ON "judge_profile_course" ("profile_id"); (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE INDEX "judge_profile_course_profile_id_b2573fc6" ON "judge_profile_course" ("profile_id"); args=()
+[DEBUG] [2021-07-05 23:27:26] CREATE INDEX "judge_profile_course_course_id_34b40f45" ON "judge_profile_course" ("course_id"); (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE INDEX "judge_profile_course_course_id_34b40f45" ON "judge_profile_course" ("course_id"); args=()
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys = ON; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys = OFF; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) BEGIN; args=None
+[DEBUG] [2021-07-05 23:27:26] CREATE TABLE "judge_profile_courses" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "profile_id" integer NOT NULL REFERENCES "judge_profile" ("user_id") DEFERRABLE INITIALLY DEFERRED, "course_id" integer NOT NULL REFERENCES "judge_course" ("id") DEFERRABLE INITIALLY DEFERRED); (params None)
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE TABLE "judge_profile_courses" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "profile_id" integer NOT NULL REFERENCES "judge_profile" ("user_id") DEFERRABLE INITIALLY DEFERRED, "course_id" integer NOT NULL REFERENCES "judge_course" ("id") DEFERRABLE INITIALLY DEFERRED); args=None
+[DEBUG] [2021-07-05 23:27:26] INSERT INTO "judge_profile_courses" (id, profile_id, course_id) SELECT id, profile_id, course_id FROM "judge_profile_course"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) INSERT INTO "judge_profile_courses" (id, profile_id, course_id) SELECT id, profile_id, course_id FROM "judge_profile_course"; args=()
+[DEBUG] [2021-07-05 23:27:26] DROP TABLE "judge_profile_course"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) DROP TABLE "judge_profile_course"; args=()
+[DEBUG] [2021-07-05 23:27:26] (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) INSERT INTO "django_migrations" ("app", "name", "applied") VALUES ('judge', '0004_auto_20210405_2022', '2021-07-05 23:27:26.352227'); args=['judge', '0004_auto_20210405_2022', '2021-07-05 23:27:26.352227']
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_key_check; args=None
+[DEBUG] [2021-07-05 23:27:26] CREATE UNIQUE INDEX "judge_profile_courses_profile_id_course_id_dc4f989b_uniq" ON "judge_profile_courses" ("profile_id", "course_id"); (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE UNIQUE INDEX "judge_profile_courses_profile_id_course_id_dc4f989b_uniq" ON "judge_profile_courses" ("profile_id", "course_id"); args=()
+[DEBUG] [2021-07-05 23:27:26] CREATE INDEX "judge_profile_courses_profile_id_3fa755cc" ON "judge_profile_courses" ("profile_id"); (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE INDEX "judge_profile_courses_profile_id_3fa755cc" ON "judge_profile_courses" ("profile_id"); args=()
+[DEBUG] [2021-07-05 23:27:26] CREATE INDEX "judge_profile_courses_course_id_a5858b10" ON "judge_profile_courses" ("course_id"); (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE INDEX "judge_profile_courses_course_id_a5858b10" ON "judge_profile_courses" ("course_id"); args=()
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys = ON; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys = OFF; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) BEGIN; args=None
+[DEBUG] [2021-07-05 23:27:26] CREATE TABLE "new__judge_course" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(32) NOT NULL); (params None)
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE TABLE "new__judge_course" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "name" varchar(32) NOT NULL); args=None
+[DEBUG] [2021-07-05 23:27:26] INSERT INTO "new__judge_course" ("id", "name") SELECT "id", "name" FROM "judge_course"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) INSERT INTO "new__judge_course" ("id", "name") SELECT "id", "name" FROM "judge_course"; args=()
+[DEBUG] [2021-07-05 23:27:26] DROP TABLE "judge_course"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) DROP TABLE "judge_course"; args=()
+[DEBUG] [2021-07-05 23:27:26] ALTER TABLE "new__judge_course" RENAME TO "judge_course"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.001) ALTER TABLE "new__judge_course" RENAME TO "judge_course"; args=()
+[DEBUG] [2021-07-05 23:27:26] (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) INSERT INTO "django_migrations" ("app", "name", "applied") VALUES ('judge', '0005_remove_course_instructor', '2021-07-05 23:27:26.387655'); args=['judge', '0005_remove_course_instructor', '2021-07-05 23:27:26.387655']
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_key_check; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys = ON; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys = OFF; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) BEGIN; args=None
+[DEBUG] [2021-07-05 23:27:26] ALTER TABLE "judge_submission" RENAME COLUMN "detailed_messages_stderr" TO "messages"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.002) ALTER TABLE "judge_submission" RENAME COLUMN "detailed_messages_stderr" TO "messages"; args=()
+[DEBUG] [2021-07-05 23:27:26] CREATE TABLE "new__judge_submission" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "status" varchar(2) NOT NULL, "submission_datetime" datetime NOT NULL, "problem_id" varchar(32) NOT NULL REFERENCES "judge_problem" ("name") DEFERRABLE INITIALLY DEFERRED, "profile_id" integer NOT NULL REFERENCES "judge_profile" ("user_id") DEFERRABLE INITIALLY DEFERRED, "messages" text NOT NULL); (params None)
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE TABLE "new__judge_submission" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "status" varchar(2) NOT NULL, "submission_datetime" datetime NOT NULL, "problem_id" varchar(32) NOT NULL REFERENCES "judge_problem" ("name") DEFERRABLE INITIALLY DEFERRED, "profile_id" integer NOT NULL REFERENCES "judge_profile" ("user_id") DEFERRABLE INITIALLY DEFERRED, "messages" text NOT NULL); args=None
+[DEBUG] [2021-07-05 23:27:26] INSERT INTO "new__judge_submission" ("id", "status", "submission_datetime", "problem_id", "profile_id", "messages") SELECT "id", "status", "submission_datetime", "problem_id", "profile_id", "messages" FROM "judge_submission"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) INSERT INTO "new__judge_submission" ("id", "status", "submission_datetime", "problem_id", "profile_id", "messages") SELECT "id", "status", "submission_datetime", "problem_id", "profile_id", "messages" FROM "judge_submission"; args=()
+[DEBUG] [2021-07-05 23:27:26] DROP TABLE "judge_submission"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) DROP TABLE "judge_submission"; args=()
+[DEBUG] [2021-07-05 23:27:26] ALTER TABLE "new__judge_submission" RENAME TO "judge_submission"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.001) ALTER TABLE "new__judge_submission" RENAME TO "judge_submission"; args=()
+[DEBUG] [2021-07-05 23:27:26] CREATE INDEX "judge_submission_problem_id_d2fabe38" ON "judge_submission" ("problem_id"); (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE INDEX "judge_submission_problem_id_d2fabe38" ON "judge_submission" ("problem_id"); args=()
+[DEBUG] [2021-07-05 23:27:26] CREATE INDEX "judge_submission_profile_id_a6adff5b" ON "judge_submission" ("profile_id"); (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE INDEX "judge_submission_profile_id_a6adff5b" ON "judge_submission" ("profile_id"); args=()
+[DEBUG] [2021-07-05 23:27:26] CREATE TABLE "new__judge_submission" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "submission_datetime" datetime NOT NULL, "problem_id" varchar(32) NOT NULL REFERENCES "judge_problem" ("name") DEFERRABLE INITIALLY DEFERRED, "profile_id" integer NOT NULL REFERENCES "judge_profile" ("user_id") DEFERRABLE INITIALLY DEFERRED, "messages" text NOT NULL, "status" varchar(2) NOT NULL); (params None)
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE TABLE "new__judge_submission" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "submission_datetime" datetime NOT NULL, "problem_id" varchar(32) NOT NULL REFERENCES "judge_problem" ("name") DEFERRABLE INITIALLY DEFERRED, "profile_id" integer NOT NULL REFERENCES "judge_profile" ("user_id") DEFERRABLE INITIALLY DEFERRED, "messages" text NOT NULL, "status" varchar(2) NOT NULL); args=None
+[DEBUG] [2021-07-05 23:27:26] INSERT INTO "new__judge_submission" ("id", "submission_datetime", "problem_id", "profile_id", "messages", "status") SELECT "id", "submission_datetime", "problem_id", "profile_id", "messages", "status" FROM "judge_submission"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) INSERT INTO "new__judge_submission" ("id", "submission_datetime", "problem_id", "profile_id", "messages", "status") SELECT "id", "submission_datetime", "problem_id", "profile_id", "messages", "status" FROM "judge_submission"; args=()
+[DEBUG] [2021-07-05 23:27:26] DROP TABLE "judge_submission"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) DROP TABLE "judge_submission"; args=()
+[DEBUG] [2021-07-05 23:27:26] ALTER TABLE "new__judge_submission" RENAME TO "judge_submission"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.001) ALTER TABLE "new__judge_submission" RENAME TO "judge_submission"; args=()
+[DEBUG] [2021-07-05 23:27:26] CREATE INDEX "judge_submission_problem_id_d2fabe38" ON "judge_submission" ("problem_id"); (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE INDEX "judge_submission_problem_id_d2fabe38" ON "judge_submission" ("problem_id"); args=()
+[DEBUG] [2021-07-05 23:27:26] CREATE INDEX "judge_submission_profile_id_a6adff5b" ON "judge_submission" ("profile_id"); (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE INDEX "judge_submission_profile_id_a6adff5b" ON "judge_submission" ("profile_id"); args=()
+[DEBUG] [2021-07-05 23:27:26] DROP TABLE "judge_account"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) DROP TABLE "judge_account"; args=()
+[DEBUG] [2021-07-05 23:27:26] (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) INSERT INTO "django_migrations" ("app", "name", "applied") VALUES ('judge', '0006_auto_20210406_1024', '2021-07-05 23:27:26.430996'); args=['judge', '0006_auto_20210406_1024', '2021-07-05 23:27:26.430996']
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_key_check; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys = ON; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys = OFF; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) BEGIN; args=None
+[DEBUG] [2021-07-05 23:27:26] ALTER TABLE "judge_submission" RENAME COLUMN "messages" TO "message"; (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.001) ALTER TABLE "judge_submission" RENAME COLUMN "messages" TO "message"; args=()
+[DEBUG] [2021-07-05 23:27:26] (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) INSERT INTO "django_migrations" ("app", "name", "applied") VALUES ('judge', '0007_auto_20210406_1027', '2021-07-05 23:27:26.444429'); args=['judge', '0007_auto_20210406_1027', '2021-07-05 23:27:26.444429']
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_key_check; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys = ON; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys = OFF; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) BEGIN; args=None
+[DEBUG] [2021-07-05 23:27:26] CREATE TABLE "django_session" ("session_key" varchar(40) NOT NULL PRIMARY KEY, "session_data" text NOT NULL, "expire_date" datetime NOT NULL); (params None)
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE TABLE "django_session" ("session_key" varchar(40) NOT NULL PRIMARY KEY, "session_data" text NOT NULL, "expire_date" datetime NOT NULL); args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) INSERT INTO "django_migrations" ("app", "name", "applied") VALUES ('sessions', '0001_initial', '2021-07-05 23:27:26.451654'); args=['sessions', '0001_initial', '2021-07-05 23:27:26.451654']
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_key_check; args=None
+[DEBUG] [2021-07-05 23:27:26] CREATE INDEX "django_session_expire_date_a5c62663" ON "django_session" ("expire_date"); (params ())
+[DEBUG] [2021-07-05 23:27:26] (0.000) CREATE INDEX "django_session_expire_date_a5c62663" ON "django_session" ("expire_date"); args=()
+[DEBUG] [2021-07-05 23:27:26] (0.000) PRAGMA foreign_keys = ON; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.001) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=()
+[DEBUG] [2021-07-05 23:27:26] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'judge'; args=('judge',)
+[DEBUG] [2021-07-05 23:27:26] (0.000) BEGIN; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) INSERT INTO "django_content_type" ("app_label", "model") SELECT 'judge', 'problem' UNION ALL SELECT 'judge', 'profile' UNION ALL SELECT 'judge', 'submission' UNION ALL SELECT 'judge', 'requiredfile' UNION ALL SELECT 'judge', 'course'; args=('judge', 'problem', 'judge', 'profile', 'judge', 'submission', 'judge', 'requiredfile', 'judge', 'course')
+[DEBUG] [2021-07-05 23:27:26] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'judge' AND "django_content_type"."model" = 'problem') LIMIT 21; args=('judge', 'problem')
+[DEBUG] [2021-07-05 23:27:26] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'judge' AND "django_content_type"."model" = 'profile') LIMIT 21; args=('judge', 'profile')
+[DEBUG] [2021-07-05 23:27:26] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'judge' AND "django_content_type"."model" = 'submission') LIMIT 21; args=('judge', 'submission')
+[DEBUG] [2021-07-05 23:27:26] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'judge' AND "django_content_type"."model" = 'requiredfile') LIMIT 21; args=('judge', 'requiredfile')
+[DEBUG] [2021-07-05 23:27:26] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'judge' AND "django_content_type"."model" = 'course') LIMIT 21; args=('judge', 'course')
+[DEBUG] [2021-07-05 23:27:26] (0.000) SELECT "auth_permission"."content_type_id", "auth_permission"."codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_permission"."content_type_id" IN (1, 2, 3, 4, 5) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, "auth_permission"."codename" ASC; args=(1, 2, 3, 4, 5)
+[DEBUG] [2021-07-05 23:27:26] (0.000) BEGIN; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) INSERT INTO "auth_permission" ("name", "content_type_id", "codename") SELECT 'Can add problem', 1, 'add_problem' UNION ALL SELECT 'Can change problem', 1, 'change_problem' UNION ALL SELECT 'Can delete problem', 1, 'delete_problem' UNION ALL SELECT 'Can view problem', 1, 'view_problem' UNION ALL SELECT 'Can add profile', 2, 'add_profile' UNION ALL SELECT 'Can change profile', 2, 'change_profile' UNION ALL SELECT 'Can delete profile', 2, 'delete_profile' UNION ALL SELECT 'Can view profile', 2, 'view_profile' UNION ALL SELECT 'Can add submission', 3, 'add_submission' UNION ALL SELECT 'Can change submission', 3, 'change_submission' UNION ALL SELECT 'Can delete submission', 3, 'delete_submission' UNION ALL SELECT 'Can view submission', 3, 'view_submission' UNION ALL SELECT 'Can add required file', 4, 'add_requiredfile' UNION ALL SELECT 'Can change required file', 4, 'change_requiredfile' UNION ALL SELECT 'Can delete required file', 4, 'delete_requiredfile' UNION ALL SELECT 'Can view required file', 4, 'view_requiredfile' UNION ALL SELECT 'Can add course', 5, 'add_course' UNION ALL SELECT 'Can change course', 5, 'change_course' UNION ALL SELECT 'Can delete course', 5, 'delete_course' UNION ALL SELECT 'Can view course', 5, 'view_course'; args=('Can add problem', 1, 'add_problem', 'Can change problem', 1, 'change_problem', 'Can delete problem', 1, 'delete_problem', 'Can view problem', 1, 'view_problem', 'Can add profile', 2, 'add_profile', 'Can change profile', 2, 'change_profile', 'Can delete profile', 2, 'delete_profile', 'Can view profile', 2, 'view_profile', 'Can add submission', 3, 'add_submission', 'Can change submission', 3, 'change_submission', 'Can delete submission', 3, 'delete_submission', 'Can view submission', 3, 'view_submission', 'Can add required file', 4, 'add_requiredfile', 'Can change required file', 4, 'change_requiredfile', 'Can delete required file', 4, 'delete_requiredfile', 'Can view required file', 4, 'view_requiredfile', 'Can add course', 5, 'add_course', 'Can change course', 5, 'change_course', 'Can delete course', 5, 'delete_course', 'Can view course', 5, 'view_course')
+[DEBUG] [2021-07-05 23:27:26] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'judge'; args=('judge',)
+[DEBUG] [2021-07-05 23:27:26] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'widget_tweaks'; args=('widget_tweaks',)
+[DEBUG] [2021-07-05 23:27:26] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'widget_tweaks'; args=('widget_tweaks',)
+[DEBUG] [2021-07-05 23:27:26] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'admin'; args=('admin',)
+[DEBUG] [2021-07-05 23:27:26] (0.000) BEGIN; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) INSERT INTO "django_content_type" ("app_label", "model") SELECT 'admin', 'logentry'; args=('admin', 'logentry')
+[DEBUG] [2021-07-05 23:27:26] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'admin' AND "django_content_type"."model" = 'logentry') LIMIT 21; args=('admin', 'logentry')
+[DEBUG] [2021-07-05 23:27:26] (0.000) SELECT "auth_permission"."content_type_id", "auth_permission"."codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_permission"."content_type_id" IN (6) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, "auth_permission"."codename" ASC; args=(6,)
+[DEBUG] [2021-07-05 23:27:26] (0.000) BEGIN; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) INSERT INTO "auth_permission" ("name", "content_type_id", "codename") SELECT 'Can add log entry', 6, 'add_logentry' UNION ALL SELECT 'Can change log entry', 6, 'change_logentry' UNION ALL SELECT 'Can delete log entry', 6, 'delete_logentry' UNION ALL SELECT 'Can view log entry', 6, 'view_logentry'; args=('Can add log entry', 6, 'add_logentry', 'Can change log entry', 6, 'change_logentry', 'Can delete log entry', 6, 'delete_logentry', 'Can view log entry', 6, 'view_logentry')
+[DEBUG] [2021-07-05 23:27:26] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'admin'; args=('admin',)
+[DEBUG] [2021-07-05 23:27:26] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'auth'; args=('auth',)
+[DEBUG] [2021-07-05 23:27:26] (0.000) BEGIN; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) INSERT INTO "django_content_type" ("app_label", "model") SELECT 'auth', 'permission' UNION ALL SELECT 'auth', 'group' UNION ALL SELECT 'auth', 'user'; args=('auth', 'permission', 'auth', 'group', 'auth', 'user')
+[DEBUG] [2021-07-05 23:27:26] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'auth' AND "django_content_type"."model" = 'permission') LIMIT 21; args=('auth', 'permission')
+[DEBUG] [2021-07-05 23:27:26] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'auth' AND "django_content_type"."model" = 'group') LIMIT 21; args=('auth', 'group')
+[DEBUG] [2021-07-05 23:27:26] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'auth' AND "django_content_type"."model" = 'user') LIMIT 21; args=('auth', 'user')
+[DEBUG] [2021-07-05 23:27:26] (0.000) SELECT "auth_permission"."content_type_id", "auth_permission"."codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_permission"."content_type_id" IN (8, 9, 7) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, "auth_permission"."codename" ASC; args=(8, 9, 7)
+[DEBUG] [2021-07-05 23:27:26] (0.000) BEGIN; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) INSERT INTO "auth_permission" ("name", "content_type_id", "codename") SELECT 'Can add permission', 7, 'add_permission' UNION ALL SELECT 'Can change permission', 7, 'change_permission' UNION ALL SELECT 'Can delete permission', 7, 'delete_permission' UNION ALL SELECT 'Can view permission', 7, 'view_permission' UNION ALL SELECT 'Can add group', 8, 'add_group' UNION ALL SELECT 'Can change group', 8, 'change_group' UNION ALL SELECT 'Can delete group', 8, 'delete_group' UNION ALL SELECT 'Can view group', 8, 'view_group' UNION ALL SELECT 'Can add user', 9, 'add_user' UNION ALL SELECT 'Can change user', 9, 'change_user' UNION ALL SELECT 'Can delete user', 9, 'delete_user' UNION ALL SELECT 'Can view user', 9, 'view_user'; args=('Can add permission', 7, 'add_permission', 'Can change permission', 7, 'change_permission', 'Can delete permission', 7, 'delete_permission', 'Can view permission', 7, 'view_permission', 'Can add group', 8, 'add_group', 'Can change group', 8, 'change_group', 'Can delete group', 8, 'delete_group', 'Can view group', 8, 'view_group', 'Can add user', 9, 'add_user', 'Can change user', 9, 'change_user', 'Can delete user', 9, 'delete_user', 'Can view user', 9, 'view_user')
+[DEBUG] [2021-07-05 23:27:26] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'auth'; args=('auth',)
+[DEBUG] [2021-07-05 23:27:26] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'contenttypes'; args=('contenttypes',)
+[DEBUG] [2021-07-05 23:27:26] (0.000) BEGIN; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) INSERT INTO "django_content_type" ("app_label", "model") SELECT 'contenttypes', 'contenttype'; args=('contenttypes', 'contenttype')
+[DEBUG] [2021-07-05 23:27:26] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'contenttypes' AND "django_content_type"."model" = 'contenttype') LIMIT 21; args=('contenttypes', 'contenttype')
+[DEBUG] [2021-07-05 23:27:26] (0.000) SELECT "auth_permission"."content_type_id", "auth_permission"."codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_permission"."content_type_id" IN (10) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, "auth_permission"."codename" ASC; args=(10,)
+[DEBUG] [2021-07-05 23:27:26] (0.000) BEGIN; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) INSERT INTO "auth_permission" ("name", "content_type_id", "codename") SELECT 'Can add content type', 10, 'add_contenttype' UNION ALL SELECT 'Can change content type', 10, 'change_contenttype' UNION ALL SELECT 'Can delete content type', 10, 'delete_contenttype' UNION ALL SELECT 'Can view content type', 10, 'view_contenttype'; args=('Can add content type', 10, 'add_contenttype', 'Can change content type', 10, 'change_contenttype', 'Can delete content type', 10, 'delete_contenttype', 'Can view content type', 10, 'view_contenttype')
+[DEBUG] [2021-07-05 23:27:26] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'contenttypes'; args=('contenttypes',)
+[DEBUG] [2021-07-05 23:27:26] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'sessions'; args=('sessions',)
+[DEBUG] [2021-07-05 23:27:26] (0.000) BEGIN; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) INSERT INTO "django_content_type" ("app_label", "model") SELECT 'sessions', 'session'; args=('sessions', 'session')
+[DEBUG] [2021-07-05 23:27:26] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'sessions' AND "django_content_type"."model" = 'session') LIMIT 21; args=('sessions', 'session')
+[DEBUG] [2021-07-05 23:27:26] (0.000) SELECT "auth_permission"."content_type_id", "auth_permission"."codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_permission"."content_type_id" IN (11) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, "auth_permission"."codename" ASC; args=(11,)
+[DEBUG] [2021-07-05 23:27:26] (0.000) BEGIN; args=None
+[DEBUG] [2021-07-05 23:27:26] (0.000) INSERT INTO "auth_permission" ("name", "content_type_id", "codename") SELECT 'Can add session', 11, 'add_session' UNION ALL SELECT 'Can change session', 11, 'change_session' UNION ALL SELECT 'Can delete session', 11, 'delete_session' UNION ALL SELECT 'Can view session', 11, 'view_session'; args=('Can add session', 11, 'add_session', 'Can change session', 11, 'change_session', 'Can delete session', 11, 'delete_session', 'Can view session', 11, 'view_session')
+[DEBUG] [2021-07-05 23:27:26] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'sessions'; args=('sessions',)
+[DEBUG] [2021-07-05 23:27:28] (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+[DEBUG] [2021-07-05 23:27:28] (0.001) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=()
+[DEBUG] [2021-07-05 23:27:28] (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+[DEBUG] [2021-07-05 23:27:28] (0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=()
+[DEBUG] [2021-07-05 23:27:28] (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+[DEBUG] [2021-07-05 23:27:28] (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+[DEBUG] [2021-07-05 23:27:28] (0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=()
+[DEBUG] [2021-07-05 23:27:28] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'judge'; args=('judge',)
+[DEBUG] [2021-07-05 23:27:28] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'judge' AND "django_content_type"."model" = 'problem') LIMIT 21; args=('judge', 'problem')
+[DEBUG] [2021-07-05 23:27:28] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'judge' AND "django_content_type"."model" = 'profile') LIMIT 21; args=('judge', 'profile')
+[DEBUG] [2021-07-05 23:27:28] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'judge' AND "django_content_type"."model" = 'submission') LIMIT 21; args=('judge', 'submission')
+[DEBUG] [2021-07-05 23:27:28] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'judge' AND "django_content_type"."model" = 'requiredfile') LIMIT 21; args=('judge', 'requiredfile')
+[DEBUG] [2021-07-05 23:27:28] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'judge' AND "django_content_type"."model" = 'course') LIMIT 21; args=('judge', 'course')
+[DEBUG] [2021-07-05 23:27:28] (0.000) SELECT "auth_permission"."content_type_id", "auth_permission"."codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_permission"."content_type_id" IN (1, 2, 3, 4, 5) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, "auth_permission"."codename" ASC; args=(1, 2, 3, 4, 5)
+[DEBUG] [2021-07-05 23:27:28] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'judge'; args=('judge',)
+[DEBUG] [2021-07-05 23:27:28] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'widget_tweaks'; args=('widget_tweaks',)
+[DEBUG] [2021-07-05 23:27:28] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'widget_tweaks'; args=('widget_tweaks',)
+[DEBUG] [2021-07-05 23:27:28] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'admin'; args=('admin',)
+[DEBUG] [2021-07-05 23:27:28] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'admin' AND "django_content_type"."model" = 'logentry') LIMIT 21; args=('admin', 'logentry')
+[DEBUG] [2021-07-05 23:27:28] (0.000) SELECT "auth_permission"."content_type_id", "auth_permission"."codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_permission"."content_type_id" IN (6) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, "auth_permission"."codename" ASC; args=(6,)
+[DEBUG] [2021-07-05 23:27:28] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'admin'; args=('admin',)
+[DEBUG] [2021-07-05 23:27:28] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'auth'; args=('auth',)
+[DEBUG] [2021-07-05 23:27:28] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'auth' AND "django_content_type"."model" = 'permission') LIMIT 21; args=('auth', 'permission')
+[DEBUG] [2021-07-05 23:27:28] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'auth' AND "django_content_type"."model" = 'group') LIMIT 21; args=('auth', 'group')
+[DEBUG] [2021-07-05 23:27:28] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'auth' AND "django_content_type"."model" = 'user') LIMIT 21; args=('auth', 'user')
+[DEBUG] [2021-07-05 23:27:28] (0.000) SELECT "auth_permission"."content_type_id", "auth_permission"."codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_permission"."content_type_id" IN (8, 9, 7) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, "auth_permission"."codename" ASC; args=(8, 9, 7)
+[DEBUG] [2021-07-05 23:27:28] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'auth'; args=('auth',)
+[DEBUG] [2021-07-05 23:27:28] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'contenttypes'; args=('contenttypes',)
+[DEBUG] [2021-07-05 23:27:28] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'contenttypes' AND "django_content_type"."model" = 'contenttype') LIMIT 21; args=('contenttypes', 'contenttype')
+[DEBUG] [2021-07-05 23:27:28] (0.000) SELECT "auth_permission"."content_type_id", "auth_permission"."codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_permission"."content_type_id" IN (10) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, "auth_permission"."codename" ASC; args=(10,)
+[DEBUG] [2021-07-05 23:27:28] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'contenttypes'; args=('contenttypes',)
+[DEBUG] [2021-07-05 23:27:28] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'sessions'; args=('sessions',)
+[DEBUG] [2021-07-05 23:27:28] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'sessions' AND "django_content_type"."model" = 'session') LIMIT 21; args=('sessions', 'session')
+[DEBUG] [2021-07-05 23:27:28] (0.000) SELECT "auth_permission"."content_type_id", "auth_permission"."codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_permission"."content_type_id" IN (11) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, "auth_permission"."codename" ASC; args=(11,)
+[DEBUG] [2021-07-05 23:27:28] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'sessions'; args=('sessions',)
+[DEBUG] [2021-07-05 23:39:17] (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+[DEBUG] [2021-07-05 23:39:17] (0.001) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=()
+[DEBUG] [2021-07-05 23:39:17] (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+[DEBUG] [2021-07-05 23:39:17] (0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=()
+[DEBUG] [2021-07-05 23:39:17] (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+[DEBUG] [2021-07-05 23:39:17] (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+[DEBUG] [2021-07-05 23:39:17] (0.000) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=()
+[DEBUG] [2021-07-05 23:39:17] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'judge'; args=('judge',)
+[DEBUG] [2021-07-05 23:39:17] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'judge' AND "django_content_type"."model" = 'problem') LIMIT 21; args=('judge', 'problem')
+[DEBUG] [2021-07-05 23:39:17] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'judge' AND "django_content_type"."model" = 'profile') LIMIT 21; args=('judge', 'profile')
+[DEBUG] [2021-07-05 23:39:17] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'judge' AND "django_content_type"."model" = 'submission') LIMIT 21; args=('judge', 'submission')
+[DEBUG] [2021-07-05 23:39:17] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'judge' AND "django_content_type"."model" = 'requiredfile') LIMIT 21; args=('judge', 'requiredfile')
+[DEBUG] [2021-07-05 23:39:17] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'judge' AND "django_content_type"."model" = 'course') LIMIT 21; args=('judge', 'course')
+[DEBUG] [2021-07-05 23:39:17] (0.000) SELECT "auth_permission"."content_type_id", "auth_permission"."codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_permission"."content_type_id" IN (1, 2, 3, 4, 5) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, "auth_permission"."codename" ASC; args=(1, 2, 3, 4, 5)
+[DEBUG] [2021-07-05 23:39:17] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'judge'; args=('judge',)
+[DEBUG] [2021-07-05 23:39:17] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'widget_tweaks'; args=('widget_tweaks',)
+[DEBUG] [2021-07-05 23:39:17] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'widget_tweaks'; args=('widget_tweaks',)
+[DEBUG] [2021-07-05 23:39:17] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'admin'; args=('admin',)
+[DEBUG] [2021-07-05 23:39:17] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'admin' AND "django_content_type"."model" = 'logentry') LIMIT 21; args=('admin', 'logentry')
+[DEBUG] [2021-07-05 23:39:17] (0.000) SELECT "auth_permission"."content_type_id", "auth_permission"."codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_permission"."content_type_id" IN (6) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, "auth_permission"."codename" ASC; args=(6,)
+[DEBUG] [2021-07-05 23:39:17] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'admin'; args=('admin',)
+[DEBUG] [2021-07-05 23:39:17] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'auth'; args=('auth',)
+[DEBUG] [2021-07-05 23:39:17] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'auth' AND "django_content_type"."model" = 'permission') LIMIT 21; args=('auth', 'permission')
+[DEBUG] [2021-07-05 23:39:17] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'auth' AND "django_content_type"."model" = 'group') LIMIT 21; args=('auth', 'group')
+[DEBUG] [2021-07-05 23:39:17] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'auth' AND "django_content_type"."model" = 'user') LIMIT 21; args=('auth', 'user')
+[DEBUG] [2021-07-05 23:39:17] (0.000) SELECT "auth_permission"."content_type_id", "auth_permission"."codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_permission"."content_type_id" IN (8, 9, 7) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, "auth_permission"."codename" ASC; args=(8, 9, 7)
+[DEBUG] [2021-07-05 23:39:17] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'auth'; args=('auth',)
+[DEBUG] [2021-07-05 23:39:17] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'contenttypes'; args=('contenttypes',)
+[DEBUG] [2021-07-05 23:39:17] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'contenttypes' AND "django_content_type"."model" = 'contenttype') LIMIT 21; args=('contenttypes', 'contenttype')
+[DEBUG] [2021-07-05 23:39:17] (0.000) SELECT "auth_permission"."content_type_id", "auth_permission"."codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_permission"."content_type_id" IN (10) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, "auth_permission"."codename" ASC; args=(10,)
+[DEBUG] [2021-07-05 23:39:17] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'contenttypes'; args=('contenttypes',)
+[DEBUG] [2021-07-05 23:39:17] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'sessions'; args=('sessions',)
+[DEBUG] [2021-07-05 23:39:17] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'sessions' AND "django_content_type"."model" = 'session') LIMIT 21; args=('sessions', 'session')
+[DEBUG] [2021-07-05 23:39:17] (0.000) SELECT "auth_permission"."content_type_id", "auth_permission"."codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_permission"."content_type_id" IN (11) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, "auth_permission"."codename" ASC; args=(11,)
+[DEBUG] [2021-07-05 23:39:17] (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'sessions'; args=('sessions',)

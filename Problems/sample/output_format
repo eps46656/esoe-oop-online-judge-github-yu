@@ -1,0 +1,1 @@
+<p>\(\texttt{gc.calPopulation(initialSize, days)}\) should return an integer, which is the size of the green crud population after \(\texttt{days}\) days, starting at an initial size of \(\texttt{initialSize}\).</p>
