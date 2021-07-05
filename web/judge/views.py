@@ -95,11 +95,11 @@ def problem_detail(request, pk):
     profile_solved = profile.solved_problems.filter(pk=problem.pk).exists()
 
     submitted_file_info_list = []
-    for f in problem.requiredfile_set.filter(via='S'):
+    for f in problem.required_files.filter(via='S'):
         submitted_file_info_list.append({'filename': f.filename})
     
     provided_file_info_list = []
-    for f in problem.requiredfile_set.filter(via='P'):
+    for f in problem.required_files.filter(via='P'):
         provided_file_info_list.append({
             'filename': f.filename,
             'static_path': os.path.join(
@@ -219,7 +219,7 @@ def submission_detail(request, pk):
     # display submitted files (only when status != 'SU' and status != 'SE')
     submitted_file_info_list = []
     if submission.status != 'SU' and submission.status != 'SE':
-        submitted_filenames = [f.filename for f in submission.problem.requiredfile_set.filter(via='S')]
+        submitted_filenames = [f.filename for f in submission.problem.required_files.filter(via='S')]
         for filename in submitted_filenames:
             # here, we specifically open the file in binary mode, read it, and
             # then decode it with UTF-8, such that reading submitted files in

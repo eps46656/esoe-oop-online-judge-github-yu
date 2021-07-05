@@ -88,5 +88,7 @@ public class Main {
                 return;
             }
         }
+
+        rg.OutputAC();
     }
 }

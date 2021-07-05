@@ -107,7 +107,7 @@ def get_submitted_files():
              '{}',
              '{}')
     # get submitted files
-    submitted_filenames = [f.filename for f in problem.requiredfile_set.filter(via='S')]
+    submitted_filenames = [f.filename for f in problem.required_files.filter(via='S')]
     for filename in submitted_filenames:
         bitbucket_url = bitbucket_url_base.format(filename)
         cmd = cmd_base.format(shlex.quote(bitbucket_url),
@@ -167,13 +167,11 @@ def compile():
     # copy Main.java and provided files to here
     problem_id_dir = os.path.join(config.JUDGE_PROBLEMS_DIR, str(problem.pk))
     problem_id_provided_dir = os.path.join(config.JUDGE_STATIC_PROBLEMS_DIR, str(problem.pk))
-    provided_filenames = [f.filename for f in problem.requiredfile_set.filter(via='P')]
+    provided_filenames = [f.filename for f in problem.required_files.filter(via='P')]
     shutil.copyfile(os.path.join(problem_id_dir, 'Main.java'),
                     os.path.join(os.getcwd(), 'Main.java'))
     shutil.copyfile(os.path.join(config.JUDGE_BIN_DIR, 'ResultGenerator.java'),
                     os.path.join(os.getcwd(), 'ResultGenerator.java'))
-    shutil.copyfile(os.path.join(config.JUDGE_BIN_DIR, 'ExceptionProcessor.java'),
-                    os.path.join(os.getcwd(), 'ExceptionProcessor.java'))
     
     for filename in provided_filenames:
         shutil.copyfile(os.path.join(problem_id_provided_dir, filename),
@@ -216,9 +214,9 @@ def set_rlimit_fsize():
                         config.JUDGE_EXECUTION_MAX_OUTPUT_SIZE * 1024))
 
 def get_token():
-    r=''
+    r = ''
     for i in range(16):
-        r +=random.choice('0123456789ABCDEF')
+        r += random.choice('0123456789ABCDEF')
     return r
 
 def resolve_output(token, output):
@@ -226,6 +224,7 @@ def resolve_output(token, output):
     
     try:
         if token != output[-16:]:
+            print('token != output[-16:]:')
             return 'RE', ''
         
         num = int(output[-32:-16], 16)
@@ -309,6 +308,7 @@ def execute():
             check=True,
             preexec_fn=set_rlimit_fsize)
     except subprocess.TimeoutExpired as e:
+        print('subprocess.TimeoutExpired as e')
         submission.status = 'RE'
         submission.message = 'Execution timed out.'
         submission.save()
@@ -383,7 +383,7 @@ def main():
     # get submitted files
     # get_submitted_files()
     auth_token = config.GITHUB_TOKEN
-    submitted_filenames = [f.filename for f in problem.requiredfile_set.filter(via='S')]
+    submitted_filenames = [f.filename for f in problem.required_files.filter(via='S')]
     for filename in submitted_filenames:
         file_endpoint = "https://raw.githubusercontent.com/%s/%s/master/%s/%s?token=%s" % (
             profile.github_account,

@@ -1,6 +1,0 @@
-<p>Green crud is a new kind of bacterium that has just been discovered and named by scientists. To better understand them, scientists have carried out a seires of experiments over the growth of the green crud population.</p>
-<p>It is observed that the green crud population grows every five days, and that it grows in the same manner as the Fibonacci sequence does.</p>
-<p>For your information, the Fibonacci sequence is defined as follows:<br />\[<br />  \left\{ \begin{align}<br />    &amp; F_1 = F_2 = 1 \\<br />    &amp; F_{i+2} = F_i + F_{i+1}, \mbox{ for \(i \geq 1\)}<br />  \end{align} \right.<br />\]</p>
-<p>Hence, for example, if the green crud population starts out as \(10\) pounds of cruds, then in \(5\) days, there will still be \(10\) pounds of cruds; in \(10\) days, there will be \(20\) pounds of cruds; in \(15\) days, \(30\) pounds; in \(20\) days, \(50\) pounds; and so forth.</p>
-<p>In this problem, you are asked to implement the \(\texttt{GreenCrud}\) class.</p>
-<p>In \(\texttt{GreenCrud}\), there is only a single method that you should implement, which is \(\texttt{calPopulation}\), and whose function is to calculate the size of the green crud population after a given amount of days, starting at a given initial size.</p>

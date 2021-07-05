@@ -1,2 +1,0 @@
-<p>\(\texttt{GreenCrud gc = new GreenCrud();}\)</p>
-<p>\(\texttt{gc.calPopulation(initialSize, days)}\), where \(\texttt{intialSize}\) and \(\texttt{days}\) are integers, and that \(1 \leq \texttt{initialSize} \leq 10000\) and \(1 \leq \texttt{days} \leq 100\).</p>

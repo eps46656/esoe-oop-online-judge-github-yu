@@ -62,7 +62,7 @@ class Problem(models.Model):
 
 
 class RequiredFile(models.Model):
-    problem = models.ForeignKey(Problem, on_delete=models.CASCADE)
+    problem = models.ForeignKey(Problem, related_name = 'required_files', on_delete=models.CASCADE)
 
     filename = models.CharField(max_length=32)
     via = models.CharField(max_length=1,

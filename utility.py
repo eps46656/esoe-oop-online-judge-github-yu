@@ -186,7 +186,7 @@ def CreateProblem(
             RequiredFile.objects.create(
                 problem=problem,
                 filename=filename,
-                via='S')
+                via=via)
 
     return ''
 
@@ -221,7 +221,7 @@ def CreateProblemFromDir(problem_dir):
         'S': [] if s[0] == '' else s[0].split(','),
         'P': [] if s[1] == '' else s[1].split(',') }
     
-    CreateProblem(
+    return CreateProblem(
         name,
         staff_viewable_only=staff_viewable_only,
         course=course,
@@ -233,8 +233,6 @@ def CreateProblemFromDir(problem_dir):
         sample_output=sample_output,
         deadline_datetime=deadline_datetime,
         required_files=required_files)
-
-    return ''
 
 def SetProblem(
     name,
@@ -276,17 +274,63 @@ def SetProblem(
     problem.sample_input=sample_input
     problem.deadline_datetime=deadline_datetime
 
+    for required_file in problem.required_files.all():
+        required_file.delete()
+
     problem.save()
 
     for via in ['S', 'P']:
         for filename in required_files[via]:
-            f=RequiredFile(
+            RequiredFile.objects.create(
                 problem=problem,
                 filename=filename,
-                via='S')
-            
-            f.save()
+                via=via)
     
+    return ''
+
+def SetProblemFromDir(problem_dir):
+    if not os.path.isdir(problem_dir):
+        return '{}: \'{}\' is not a valid directory'.format(
+            CreateProblemFromDir.__nmae__, problem_dir)
+
+    staff_viewable_only=ReadFile(os.path.join(
+        problem_dir, 'staff_viewable_only'))
+
+    if staff_viewable_only == 'True':
+        staff_viewable_only=True
+    elif staff_viewable_only == 'False':
+        staff_viewable_only=False
+    else:
+        return '{}: staff_viewable_only is neither \'True\' nor \'False\''.format(
+            CreateProblemFromDir.__name__)
+
+    name=ReadFile(os.path.join(problem_dir, 'name'))
+    course=ReadFile(os.path.join(problem_dir, 'course'))
+    title=ReadFile(os.path.join(problem_dir, 'title'))
+    description=ReadFile(os.path.join(problem_dir, 'description'))
+    input_format=ReadFile(os.path.join(problem_dir, 'input_format'))
+    output_format=ReadFile(os.path.join(problem_dir, 'output_format'))
+    sample_input=ReadFile(os.path.join(problem_dir, 'sameple_input'))
+    sample_output=ReadFile(os.path.join(problem_dir, 'sample_output'))
+    deadline_datetime=ReadFile(os.path.join(problem_dir, 'deadline_datetime'))
+    
+    s=ReadFile(os.path.join(problem_dir, 'required_files')).split('\n')
+    required_files={
+        'S': [] if s[0] == '' else s[0].split(','),
+        'P': [] if s[1] == '' else s[1].split(',') }
+        
+    return SetProblem(
+        name,
+        staff_viewable_only=staff_viewable_only,
+        course=course,
+        title=title,
+        description=description,
+        input_format=input_format,
+        output_format=output_format,
+        sample_input=sample_input,
+        sample_output=sample_output,
+        deadline_datetime=deadline_datetime,
+        required_files=required_files)
 
 #///////////////////////////////////////////////////////////////////////////////
 
@@ -325,16 +369,6 @@ def ShowProblemStatus():
         print(problem)
 
 def ShowCourseStatus(course=None):
-    '''
-    course = GetCourseModel(course)
-
-    for user in course.profiles.all():
-        print(user.profile)
-    
-    for problem in course.problems.all():
-        print(problem)
-    '''
-
     for courses in Course.objects.all():
         print(courses)
 
