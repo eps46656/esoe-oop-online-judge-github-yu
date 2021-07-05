@@ -9,7 +9,7 @@ import config
 config.set_up_django()
 
 from django.contrib.auth.models import User
-from web.judge.models import *
+from judge.models import *
 import random
 
 #///////////////////////////////////////////////////////////////////////////////
@@ -51,7 +51,7 @@ def GetProfileModel(profile):
 
     return None
 
-def CreateUser(
+def CreateProfile(
     student_id,
     password,
     name,
@@ -74,14 +74,17 @@ def CreateUser(
             email=student_id + '@ntu.edu.tw',
             password=password)
     
-    user.courses.add(course)
     user.save()
-
-    Profile.objects.create(
+    
+    profile = Profile.objects.create(
         user=user,
         name=name,        
         github_account=github_account,
         github_repository=github_repository)
+    
+    profile.courses.add(course)
+    profile.save()
+    print('ok')
     
     return ''
 
@@ -341,17 +344,6 @@ def ShowCourseStatus(course=None):
 #///////////////////////////////////////////////////////////////////////////////
 
 def main():
-    CreateCourse('oop')
-
-    CreateUser(
-        'b08505025',
-        'YuCY1520',
-        'yu',
-        'oop',
-        'eps46656',
-        'test'
-    )
-
     return
 
 if __name__ == '__main__':
